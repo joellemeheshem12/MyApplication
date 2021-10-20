@@ -5,10 +5,12 @@ android:shape="rectangle"
     >
 
 <stroke
-    android:width="10dp"
-    android:backgroundTint="@android:color/transparent"
+    android:width="100dp"
+    android:backgroundTint="@color/black"
     android:strokeColor="@color/black"
 
     android:color="@android:color/black" />
+    <stroke android:width="5px" android:color="@color/black"/>
 <corners android:radius="100dp" />
 </shape>
+

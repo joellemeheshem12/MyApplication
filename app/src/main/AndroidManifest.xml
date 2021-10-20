@@ -10,6 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication">
         <activity
+            android:name=".WelcomeActivity"
+            android:exported="true" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="true" />
+        <activity
             android:name=".LogInActivity"
             android:exported="true" />
         <activity
@@ -19,10 +25,10 @@
             android:name=".SignUPActivity"
             android:exported="true" />
         <activity
-            android:name=".WelcomeActivity"
+            android:name=".ArrayListActivity"
             android:exported="true" />
         <activity
-            android:name=".ArrayListActivity"
+            android:name=".ProfileActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
