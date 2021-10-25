@@ -9,22 +9,51 @@
     android:background="@drawable/blue"
     tools:context=".MainActivity">
 
-    <Button
-        android:id="@+id/button"
+
+
+<TextView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="Welcome!"
+    android:textColor="#00296b"
+    android:textSize="25dp"
+    android:gravity="center"
+    />
+    <TextView
+        android:id="@+id/textView2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/btn_shape_round"
-        android:textColor="#03045e"
+        android:text="Join Us!"
+        android:textColor="#00296b"
+        android:textSize="20dp"
+        android:gravity="center"
+        />
+    <Button
+        android:id="@+id/buttonLogin"
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
         android:textSize="17sp"
-        android:text="log in" />
+        android:text="log in"
+        android:textColor="#f4a261"
+        android:layout_marginTop="10dp"
+        android:backgroundTint="@android:color/transparent"
+        app:strokeColor="#00296b"
+        app:strokeWidth="3dp"
+        android:onClick="login"
+
+        />
 
     <Button
-        android:id="@+id/button2"
-        android:layout_width="match_parent"
+        android:id="@+id/buttonSignUP"
+        android:layout_width="160dp"
         android:layout_height="wrap_content"
-      app:strokeColor="#03045e"
-        android:textColor="#03045e"
         android:textSize="17sp"
-        style="?attr/materialButtonOutlinedStyle"
-        android:text="sign up" />
+        android:text="sign up"
+        android:textColor="#f4a261"
+        android:layout_marginTop="10dp"
+        android:backgroundTint="@android:color/transparent"
+        app:strokeColor="#00296b"
+        app:strokeWidth="3dp"
+        android:onClick="SignUP"
+        />
 </LinearLayout>

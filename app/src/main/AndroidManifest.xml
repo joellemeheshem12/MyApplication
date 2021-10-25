@@ -13,7 +13,7 @@
             android:name=".WelcomeActivity"
             android:exported="true" />
         <activity
-            android:name=".MainActivity"
+            android:name=".ProfileActivity"
             android:exported="true" />
         <activity
             android:name=".LogInActivity"
@@ -28,7 +28,7 @@
             android:name=".ArrayListActivity"
             android:exported="true" />
         <activity
-            android:name=".ProfileActivity"
+            android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

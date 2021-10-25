@@ -9,6 +9,16 @@
     tools:context=".LogInActivity"
     android:background="@drawable/blue">
 
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Log In"
+        android:textSize="20dp"
+        android:textColor="#00296b"
+        android:gravity="center"/>
+
+
     <EditText
         android:id="@+id/editTextUsername"
         android:layout_width="match_parent"
@@ -17,7 +27,6 @@
         android:inputType="textPersonName"
         android:hint="username"
         android:padding="15dp"
-
          />
 
     <EditText
@@ -27,25 +36,23 @@
         android:ems="10"
         android:hint="password"
         android:inputType="textPassword"
-
+        android:layout_marginTop="10dp"
         />
 
     <Button
         android:id="@+id/buttonLogin"
-        android:layout_width="match_parent"
+        android:layout_width="160dp"
         android:layout_height="wrap_content"
         android:onClick="login"
-        android:background="@drawable/btn_shape_round"
-        android:textColor="@color/black"
-        android:text="Log in" />
+        android:text="Log in"
+        android:textColor="#f4a261"
+        android:layout_marginTop="10dp"
+        android:backgroundTint="@android:color/transparent"
+        app:strokeColor="#00296b"
+        app:strokeWidth="3dp"
+  />
 
-    <Button
-        android:id="@+id/buttonSignUP"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:onClick="SignUP"
-        android:background="@drawable/btn_shape_round"
-        android:textColor="@color/black"
-        android:text="SignUP" />
+
+
 
 </LinearLayout>
