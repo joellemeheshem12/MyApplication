@@ -6,7 +6,20 @@
     android:layout_height="match_parent"
     android:gravity="center"
     android:orientation="vertical"
-    tools:context=".SignUPActivity">
+    tools:context=".SignUPActivity"
+    android:background="@drawable/blue"
+    >
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="GET STARTED"
+       android:textSize="15dp"
+        android:textColor="#00296b"
+        />
+
 
     <EditText
         android:id="@+id/editTextFullName"
@@ -15,6 +28,7 @@
         android:ems="10"
         android:hint="FullName"
         android:inputType="textPersonName"
+        android:layout_marginTop="20dp"
         />
 
     <EditText
@@ -24,6 +38,7 @@
         android:ems="10"
         android:hint="Username"
         android:inputType="textPersonName"
+        android:layout_marginTop="23dp"
          />
 
     <EditText
@@ -33,6 +48,7 @@
         android:ems="10"
         android:hint="Password"
         android:inputType="textPassword"
+        android:layout_marginTop="25dp"
          />
 
     <EditText
@@ -42,6 +58,7 @@
         android:ems="10"
         android:hint="Email"
         android:inputType="textEmailAddress"
+        android:layout_marginTop="27dp"
          />
 
 
@@ -53,6 +70,7 @@
         android:ems="10"
         android:gravity="center"
         android:inputType="text"
+        android:layout_marginTop="29dp"
 
         />
 
@@ -86,9 +104,16 @@
 
     <Button
         android:id="@+id/buttonSubmit"
-        android:layout_width="wrap_content"
+        android:layout_width="160dp"
         android:layout_height="wrap_content"
-        android:padding="15dp"
+        android:textColor="#f4a261"
         android:onClick="Submit"
-        android:text="Button" />
+        android:text="Sign up"
+        android:backgroundTint="@android:color/transparent"
+        app:strokeColor="#00296b"
+        app:strokeWidth="3dp"
+        android:layout_marginTop="10dp"
+        />
+
+
 </LinearLayout>
