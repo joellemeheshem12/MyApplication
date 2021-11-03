@@ -37,7 +37,7 @@ public class SignUPActivity extends AppCompatActivity {
     }
 
     public void Submit(View view) {
-        signup(editTextUserName.getText().toString(),editTextPassword.getText().toString());
+        signup(editTextEmail.getText().toString(),editTextPassword.getText().toString());
     }
     public void signup(String name ,String password){
         mAuth.createUserWithEmailAndPassword(name, password)
@@ -49,6 +49,7 @@ public class SignUPActivity extends AppCompatActivity {
                             Log.d(TAG, "createUserWithEmail:success");
                             FirebaseUser user = mAuth.getCurrentUser();
                             Intent i = new Intent(SignUPActivity.this,IntroActivity.class);
+                            startActivity(i);
                         } else {
                             // If sign in fails, display a message to the user.
                             Log.w(TAG, "createUserWithEmail:failure", task.getException());
@@ -59,4 +60,5 @@ public class SignUPActivity extends AppCompatActivity {
                     }
                 });
     }
+
 }

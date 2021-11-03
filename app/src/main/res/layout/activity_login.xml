@@ -13,8 +13,8 @@
         android:id="@+id/textView2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Log In"
-        android:textSize="20dp"
+        android:text="Hello There!"
+        android:textSize="30dp"
         android:textColor="#00296b"
         android:gravity="center"/>
 
@@ -44,12 +44,13 @@
         android:layout_width="160dp"
         android:layout_height="wrap_content"
         android:onClick="login"
-        android:text="Log in"
+        android:text="Login"
         android:textColor="#f4a261"
         android:layout_marginTop="10dp"
         android:backgroundTint="@android:color/transparent"
         app:strokeColor="#00296b"
         app:strokeWidth="3dp"
+
   />
 
 

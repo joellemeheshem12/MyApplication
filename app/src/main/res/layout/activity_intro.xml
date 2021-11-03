@@ -5,15 +5,32 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".IntroActivity">
+    tools:context=".IntroActivity"
+    android:background="@drawable/blue"
+    >
 
-    <ImageButton
-        android:id="@+id/imageButton"
+
+    <Button
+        android:id="@+id/button"
         android:layout_width="match_parent"
-        android:layout_height="160dp"
-        app:srcCompat="@drawable/blue"
-        android:text="Training Schedule"
-        />
+        android:layout_height="wrap_content"
+        android:text="Button" />
 
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Button" />
 
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Button" />
+
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Button" />
 </LinearLayout>
