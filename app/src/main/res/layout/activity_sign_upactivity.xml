@@ -89,7 +89,7 @@
             android:layout_gravity="center_vertical"
             android:checked="true"
             android:text="M"
-            android:textColor="#ff6d6e71" />
+            android:textColor="@color/black" />
 
         <RadioButton
             android:id="@+id/radioFemale"
@@ -97,7 +97,7 @@
             android:layout_height="wrap_content"
             android:checked="false"
             android:text="F"
-            android:textColor="#ff6d6e71"
+            android:textColor="@color/black"
             android:textSize="14dp" />
 
     </RadioGroup>

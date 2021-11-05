@@ -27,6 +27,7 @@ public class ArrayListActivity extends AppCompatActivity
         setContentView(R.layout.activity_array_list);
 
         list = new ArrayList<>();
+
         list.add(new Item("This is my first Item",R.drawable.img,true,50));
         list.add(new Item("This is my second item",R.drawable.img,true,50));
 

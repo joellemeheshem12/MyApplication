@@ -11,26 +11,53 @@
 
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/buttonTrainingSchedule"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Button" />
+        android:layout_height="100dp"
+        android:text="Training Schedule"
+        android:textSize="25dp"
+        android:textColor="#f4a261"
+        android:layout_marginTop="140dp"
+        android:backgroundTint="@android:color/transparent"
+        app:strokeColor="#00296b"
+        app:strokeWidth="3dp"/>
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/buttonMyTimes"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Button" />
+        android:layout_height="100dp"
+        android:text="My Swimming Times"
+        android:textSize="25dp"
+        android:textColor="#f4a261"
+        android:layout_marginTop="10dp"
+        android:backgroundTint="@android:color/transparent"
+        app:strokeColor="#00296b"
+        app:strokeWidth="3dp"
+         />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/buttonTrainingVideos"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Button" />
+        android:layout_height="100dp"
+        android:text="Training Videos"
+        android:textSize="25dp"
+        android:textColor="#f4a261"
+        android:layout_marginTop="10dp"
+        android:backgroundTint="@android:color/transparent"
+        app:strokeColor="#00296b"
+        app:strokeWidth="3dp"/>
+
 
     <Button
-        android:id="@+id/button4"
+        android:id="@+id/buttonMyProgress"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Button" />
+        android:layout_height="100dp"
+        android:text="My Progress"
+        android:textSize="25dp"
+        android:textColor="#f4a261"
+        android:layout_marginTop="10dp"
+        android:backgroundTint="@android:color/transparent"
+        app:strokeColor="#00296b"
+        app:strokeWidth="3dp"/>
+
 </LinearLayout>

@@ -6,14 +6,19 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Button;
 import android.widget.Toast;
 
 public class IntroActivity extends AppCompatActivity {
-
+    private Button buttonTrainingSchedule,buttonMyTimes,buttonTrainingVideos,buttonMyProgress;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_intro);
+        buttonTrainingSchedule=findViewById(R.id.buttonTrainingSchedule);
+        buttonMyTimes=findViewById(R.id.buttonMyTimes);
+        buttonTrainingVideos=findViewById(R.id.buttonTrainingVideos);
+        buttonMyProgress=findViewById(R.id.buttonMyProgress);
     }
 //inflates the design of the required menu on top of the activity
     @Override
