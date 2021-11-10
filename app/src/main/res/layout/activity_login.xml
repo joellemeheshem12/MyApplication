@@ -20,12 +20,12 @@
 
 
     <EditText
-        android:id="@+id/editTextUsername"
+        android:id="@+id/editTextEmail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:inputType="textPersonName"
-        android:hint="username"
+        android:inputType="textEmailAddress"
+        android:hint="email"
         android:padding="15dp"
          />
 
@@ -50,6 +50,7 @@
         android:backgroundTint="@android:color/transparent"
         app:strokeColor="#00296b"
         app:strokeWidth="3dp"
+
 
   />
 

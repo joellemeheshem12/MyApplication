@@ -22,8 +22,8 @@ import com.google.firebase.auth.FirebaseUser;
 
 public class LogInActivity extends AppCompatActivity implements View.OnLongClickListener ,DialogInterface.OnClickListener{
     private static final String TAG = "FIREBASE";
-    private EditText  editTextUsername,editTextPassword;
-private Button buttonLogin,buttonSignUP;
+    private EditText  editTextEmail,editTextPassword;
+private Button buttonLogin;
     private FirebaseAuth mAuth;
 
     @Override
@@ -32,46 +32,45 @@ private Button buttonLogin,buttonSignUP;
         setContentView(R.layout.activity_login);
         //return a reference to the  instance of the project firebase
         mAuth = FirebaseAuth.getInstance();
-        editTextUsername=findViewById(R.id. editTextUsername);
+        editTextEmail=findViewById(R.id. editTextEmail);
         editTextPassword=findViewById(R.id.editTextPassword);
         buttonLogin=findViewById(R.id.buttonLogin);
         //sets the required button to response to long click, otherwise it won't
         buttonLogin.setOnLongClickListener(this);
-        buttonSignUP=findViewById(R.id.buttonSignUP);
-        SharedPreferences sp = getSharedPreferences("settings",MODE_PRIVATE);
+
+        SharedPreferences sp = getSharedPreferences("settings",MODE_PRIVATE);//פרטי זה אומר שרק האפליקציה הזו תוכל לכתוב ולקרוא אותו
         String username = sp.getString("username","");
         String password = sp.getString("password","");
         if(username.equals("")&& !password.equals(""))
         {
-            editTextUsername.setText(username);
+            editTextEmail.setText(username);
             editTextPassword.setText(password);
         }
 
     }
     public void login(View view){
         Intent intent= new Intent(this,IntroActivity.class) ;
-        if(!editTextUsername.getText().toString().equals("")&&editTextUsername.getText().toString().contains("@")&&editTextUsername.getText().toString().contains("."))
+        if(!editTextEmail.getText().toString().equals("")&&editTextEmail.getText().toString().contains("@")&&editTextEmail.getText().toString().contains("."))
         {
             //saving email and  password of user in a local file for future use
+            //create sp file
             SharedPreferences sp= getSharedPreferences("settings",MODE_PRIVATE);
+
             //open editor for editing
             SharedPreferences.Editor editor= sp.edit();
+
             //write the wanted settings
-            editor.putString("username",editTextUsername.getText().toString());
+            editor.putString("email",editTextEmail.getText().toString());
             editor.putString("password",editTextPassword.getText().toString());
+
             //save and close file
             editor.commit();
-            intent.putExtra("username", editTextUsername.getText().toString());
 
-            login(editTextUsername.getText().toString(),editTextPassword.getText().toString());
+            intent.putExtra("name",editTextEmail.getText().toString());
 
-            startActivity(intent);
+            login(editTextEmail.getText().toString(),editTextPassword.getText().toString());
         }
-    }
 
-    public void SignUP(View view) {
-        Intent intent= new Intent(this,SignUPActivity.class) ;
-        startActivity(intent);
     }
 
     public void onClick(DialogInterface dialog, int which)
@@ -104,7 +103,7 @@ private Button buttonLogin,buttonSignUP;
 
     public void login(String email,String password)
     {
-        mAuth.signInWithEmailAndPassword(email, password)
+        mAuth.signInWithEmailAndPassword(email, password)//פעולה הבודקת אם המשתמש קיים בפיירביס והסיסמה נכונה
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
