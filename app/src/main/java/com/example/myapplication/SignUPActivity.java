@@ -19,7 +19,7 @@ import com.google.firebase.auth.FirebaseUser;
 
 public class SignUPActivity extends AppCompatActivity {
     private EditText editTextFullName,editTextUserName,editTextPassword,editTextEmail;
-    private Button buttonSubmit;
+    private Button buttonSignUp;
     private FirebaseAuth mAuth;
     private static final String TAG = "FIREBASE";
     @Override
@@ -33,7 +33,8 @@ public class SignUPActivity extends AppCompatActivity {
         editTextUserName=findViewById(R.id.editTextUsername);
         editTextEmail=findViewById(R.id.editTextEmail);
 
-        buttonSubmit=findViewById(R.id.buttonSubmit);
+        buttonSignUp=findViewById(R.id.buttonSignUP);
+
     }
 
     public void Submit(View view) {
@@ -60,5 +61,6 @@ public class SignUPActivity extends AppCompatActivity {
                     }
                 });
     }
+
 
 }

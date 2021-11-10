@@ -103,7 +103,7 @@
     </RadioGroup>
 
     <Button
-        android:id="@+id/buttonSubmit"
+        android:id="@+id/buttonSignUP"
         android:layout_width="160dp"
         android:layout_height="wrap_content"
         android:textColor="#f4a261"
