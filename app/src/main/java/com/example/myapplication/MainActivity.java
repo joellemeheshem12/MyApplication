@@ -49,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(this, "Settings", Toast.LENGTH_LONG).show();
                 break;
             case R.id.exit_menu:
-                // closeApplication();
+                this.finish();
                 break;
         }
 
