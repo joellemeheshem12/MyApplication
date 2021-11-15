@@ -20,7 +20,7 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
-public class LogInActivity extends AppCompatActivity implements View.OnLongClickListener, DialogInterface.OnClickListener {
+public class LogInActivity extends AppCompatActivity implements  DialogInterface.OnClickListener {
     private static final String TAG = "FIREBASE";
     private EditText editTextEmail, editTextPassword;
     private Button buttonLogin;
@@ -119,10 +119,7 @@ public class LogInActivity extends AppCompatActivity implements View.OnLongClick
                 });
     }
 
-    @Override
-    public boolean onLongClick(View view) {
-        return false;
-    }
+
 }
 
 

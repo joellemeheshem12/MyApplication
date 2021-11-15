@@ -59,18 +59,7 @@
         android:layout_gravity="center"
         />
 
-    <Button
-        android:id="@+id/buttonCamera"
-        android:layout_width="160dp"
-        android:layout_height="wrap_content"
-        android:text="CAMERA"
-        android:textColor="#f4a261"
-        android:layout_marginTop="10dp"
-        android:backgroundTint="@android:color/transparent"
-        android:onClick="Submit"
-        app:strokeColor="#00296b"
-        app:strokeWidth="3dp"
-        android:layout_gravity="center"/>
+
 
 
 

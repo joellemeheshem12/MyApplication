@@ -3,9 +3,11 @@ package com.example.myapplication;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
@@ -19,6 +21,7 @@ public class IntroActivity extends AppCompatActivity {
         buttonMyTimes=findViewById(R.id.buttonMyTimes);
         buttonTrainingVideos=findViewById(R.id.buttonTrainingVideos);
         buttonMyProgress=findViewById(R.id.buttonMyProgress);
+
     }
 //inflates the design of the required menu on top of the activity
     @Override
@@ -30,8 +33,8 @@ public class IntroActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()) {
-            case R.id.settings_menu:
-                Toast.makeText(this, "Settings", Toast.LENGTH_LONG).show();
+            case R.id.camera_menu:
+                Toast.makeText(this, "Camera", Toast.LENGTH_LONG).show();
                 break;
             case R.id.exit_menu:
                 // closeApplication();
@@ -40,4 +43,10 @@ public class IntroActivity extends AppCompatActivity {
 
         return super.onOptionsItemSelected(item);
     }
+
+    public void onClick(View view) {
+        Intent intent= new Intent(this,ProfileActivity.class) ;
+        startActivity(intent);
+    }
+
 }
