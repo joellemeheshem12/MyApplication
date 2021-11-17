@@ -13,10 +13,21 @@
         android:id="@+id/textView2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Hello There!"
-        android:textSize="30dp"
+        android:text="Login"
+        android:textSize="30sp"
         android:textColor="#00296b"
+        android:textStyle="bold"
         android:gravity="center"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Login to your account"
+        android:gravity="center"
+        android:textSize="18dp"
+        android:layout_marginTop="15dp"
+        android:textColor="#00296b"
+        />
 
 
     <EditText

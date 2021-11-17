@@ -15,11 +15,22 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="GET STARTED"
-       android:textSize="23dp"
+        android:text="Sign Up"
+       android:textSize="30sp"
         android:textColor="#00296b"
+        android:textStyle="bold"
         />
 
+    <TextView
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Create an account"
+        android:textSize="18dp"
+        android:textColor="#00296b"
+        android:layout_marginTop="15dp"
+        />
 
     <EditText
         android:id="@+id/editTextFullName"
@@ -67,9 +78,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Gender"
-        android:ems="10"
+        android:textSize="18dp"
         android:gravity="center"
-        android:inputType="text"
+        android:textColor="#00296b"
         android:layout_marginTop="29dp"
 
         />

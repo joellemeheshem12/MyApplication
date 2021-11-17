@@ -21,8 +21,8 @@
 
     <Button
         android:id="@+id/buttonTrainingSchedule"
-        android:layout_width="match_parent"
-        android:layout_height="100dp"
+        android:layout_width="175dp"
+        android:layout_height="170dp"
         android:text="Training Schedule"
         android:textSize="25dp"
         android:textColor="#f4a261"
@@ -31,10 +31,11 @@
         app:strokeColor="#00296b"
         app:strokeWidth="3dp"/>
 
-    <Button
+<Button
         android:id="@+id/buttonMyTimes"
-        android:layout_width="match_parent"
-        android:layout_height="100dp"
+        android:layout_width="185dp"
+        android:layout_height="170dp"
+      android:layout_marginLeft="5dp"
         android:text="My Swimming Times"
         android:textSize="25dp"
         android:textColor="#f4a261"
