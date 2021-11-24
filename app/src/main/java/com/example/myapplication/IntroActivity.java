@@ -12,15 +12,14 @@ import android.widget.Button;
 import android.widget.Toast;
 
 public class IntroActivity extends AppCompatActivity {
-    private Button buttonTrainingSchedule,buttonMyTimes,buttonTrainingVideos,buttonMyProgress;
+    private Button buttonTrainingSchedule,buttonMyTimes;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_intro);
         buttonTrainingSchedule=findViewById(R.id.buttonTrainingSchedule);
         buttonMyTimes=findViewById(R.id.buttonMyTimes);
-        buttonTrainingVideos=findViewById(R.id.buttonTrainingVideos);
-        buttonMyProgress=findViewById(R.id.buttonMyProgress);
+
 
     }
 //inflates the design of the required menu on top of the activity
@@ -48,5 +47,8 @@ public class IntroActivity extends AppCompatActivity {
         Intent intent= new Intent(this,ProfileActivity.class) ;
         startActivity(intent);
     }
-
+    public void Submit(View view) {
+        Intent intent= new Intent(this,video.class) ;
+        startActivity(intent);
+    }
 }
