@@ -27,6 +27,7 @@ public class MainActivity extends AppCompatActivity {
         startService(musicIntent);
     }
 
+
     public void SignUP(View view) {
         Intent intent= new Intent(this,SignUPActivity.class) ;
         startActivity(intent);
