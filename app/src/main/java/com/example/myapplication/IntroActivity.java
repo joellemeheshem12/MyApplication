@@ -48,7 +48,7 @@ public class IntroActivity extends AppCompatActivity {
         startActivity(intent);
     }
     public void Submit(View view) {
-        Intent intent= new Intent(this,video.class) ;
+        Intent intent= new Intent(this,AddTimeActivity.class) ;
         startActivity(intent);
     }
 }

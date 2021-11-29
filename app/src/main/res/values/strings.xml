@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">My Application</string>
+    
+    <string-array name="pool">
+        <item>Long Course M</item>
+        <item> Short Course Mts</item>
+        <item> Short Course Yds</item>
+    </string-array>
 </resources>
