@@ -34,17 +34,21 @@ public class IntroActivity extends AppCompatActivity {
         switch (item.getItemId()) {
             case R.id.camera_menu:
                 Toast.makeText(this, "Camera", Toast.LENGTH_LONG).show();
+                Intent intent= new Intent(this,CameraActivity.class) ;
+                startActivity(intent);
                 break;
             case R.id.exit_menu:
                 // closeApplication();
+                this.finishAffinity();
                 break;
+
         }
 
         return super.onOptionsItemSelected(item);
     }
 
     public void onClick(View view) {
-        Intent intent= new Intent(this,ProfileActivity.class) ;
+        Intent intent= new Intent(this, CameraActivity.class) ;
         startActivity(intent);
     }
     public void Submit(View view) {
