@@ -51,8 +51,13 @@ public class IntroActivity extends AppCompatActivity {
         Intent intent= new Intent(this, CameraActivity.class) ;
         startActivity(intent);
     }
-    public void Submit(View view) {
+    public void Submit2(View view) {
         Intent intent= new Intent(this,AddTimeActivity.class) ;
+        startActivity(intent);
+    }
+
+    public void Submit1(View view) {
+        Intent intent= new Intent(this,AddTrainingActivity.class) ;
         startActivity(intent);
     }
 }

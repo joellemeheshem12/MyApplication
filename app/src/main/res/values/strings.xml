@@ -19,6 +19,7 @@
         <item>Backstroke</item>
         <item>Breaststroke</item>
         <item>Freestyle</item>
-</string-array>
+        <item>I.M</item>
+    </string-array>
 
 </resources>

@@ -39,6 +39,7 @@
             android:backgroundTint="@android:color/transparent"
             app:strokeColor="#00296b"
             app:strokeWidth="3dp"
+            android:onClick="Submit1"
             >
         </Button>
 
@@ -52,7 +53,7 @@
                 android:backgroundTint="@android:color/transparent"
                 app:strokeColor="#00296b"
                 app:strokeWidth="3dp"
-                android:onClick="Submit"
+                android:onClick="Submit2"
                 >
 
             </Button>
@@ -85,6 +86,7 @@
         android:backgroundTint="@android:color/transparent"
         app:strokeColor="#00296b"
         app:strokeWidth="3dp"
+
         >
 
     </Button>
