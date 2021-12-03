@@ -10,6 +10,7 @@
     android:gravity="center"
     android:background="@drawable/blue">
 
+
     <Spinner
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
         android:id="@+id/Spinner1"
@@ -29,6 +30,25 @@
         android:id="@+id/Spinner3"
         android:layout_width="120dp"
         android:layout_height="50dp"/>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="select"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu">
+
+        <AutoCompleteTextView
+            android:id="@+id/autoComplete"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:enabled="false"
+            android:inputType="none"
+            android:textColor="#000"/>
+
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
 
 
 </LinearLayout>

@@ -6,16 +6,23 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
 import android.widget.Spinner;
 import android.widget.Toast;
 
 public class AddTimeActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
    private Spinner spinner1,spinner2,spinner3;
-
+   AutoCompleteTextView autoCompleteTextView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_time);
+
+        autoCompleteTextView=findViewById(R.id.autoComplete);
+        String [] option = {"Long Course M","Short Course Mts","Short Course Yds"};
+        ArrayAdapter arrayAdapter= new ArrayAdapter(this,R.layout.option_item,option);
+        autoCompleteTextView.setText(arrayAdapter.getItem(0).toString(),false);
+        autoCompleteTextView.setAdapter(arrayAdapter);
 
         Spinner spinner1 = findViewById(R.id.Spinner1);
         ArrayAdapter<CharSequence> adapter1 =ArrayAdapter.createFromResource(this,R.array.Pool, android.R.layout.simple_spinner_item);
