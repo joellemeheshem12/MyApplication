@@ -10,48 +10,30 @@ import android.widget.AutoCompleteTextView;
 import android.widget.Spinner;
 import android.widget.Toast;
 
-public class AddTimeActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
+public class AddTimeActivity extends AppCompatActivity  {
    private Spinner spinner1,spinner2,spinner3;
-   AutoCompleteTextView autoCompleteTextView;
+   AutoCompleteTextView autoCompleteTextView1,autoCompleteTextView2,autoCompleteTextView3;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_time);
 
-        autoCompleteTextView=findViewById(R.id.autoComplete);
-        String [] option = {"Long Course M","Short Course Mts","Short Course Yds"};
-        ArrayAdapter arrayAdapter= new ArrayAdapter(this,R.layout.option_item,option);
-        autoCompleteTextView.setText(arrayAdapter.getItem(0).toString(),false);
-        autoCompleteTextView.setAdapter(arrayAdapter);
+        autoCompleteTextView1 = findViewById(R.id.autoComplete1);
+        String[] option1 = {"Long Course M", "Short Course Mts", "Short Course Yds"};
+        ArrayAdapter arrayAdapter1 = new ArrayAdapter(this, R.layout.option_item, option1);
+        autoCompleteTextView1.setText(arrayAdapter1.getItem(0).toString(), false);
+        autoCompleteTextView1.setAdapter(arrayAdapter1);
 
-        Spinner spinner1 = findViewById(R.id.Spinner1);
-        ArrayAdapter<CharSequence> adapter1 =ArrayAdapter.createFromResource(this,R.array.Pool, android.R.layout.simple_spinner_item);
-        adapter1.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinner1.setAdapter(adapter1);
-        spinner1.setOnItemSelectedListener(this);
+        autoCompleteTextView2 = findViewById(R.id.autoComplete2);
+        String[] option2 = {"50", "100", "200","400"};
+        ArrayAdapter arrayAdapter2 = new ArrayAdapter(this, R.layout.option_item, option2);
+        autoCompleteTextView2.setText(arrayAdapter2.getItem(0).toString(), false);
+        autoCompleteTextView2.setAdapter(arrayAdapter2);
 
-        Spinner spinner2 = findViewById(R.id.Spinner2);
-        ArrayAdapter<CharSequence> adapter2 =ArrayAdapter.createFromResource(this,R.array.Distance, android.R.layout.simple_spinner_item);
-        adapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinner2.setAdapter(adapter2);
-        spinner2.setOnItemSelectedListener(this);
-
-        Spinner spinner3 = findViewById(R.id.Spinner3);
-        ArrayAdapter<CharSequence> adapter3 =ArrayAdapter.createFromResource(this,R.array.Stroke, android.R.layout.simple_spinner_item);
-        adapter3.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinner3.setAdapter(adapter3);
-        spinner3.setOnItemSelectedListener(this);
-    }
-
-
-    @Override
-    public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-        String choice = adapterView.getItemAtPosition(i).toString();
-        Toast.makeText(getApplicationContext(),choice,Toast.LENGTH_LONG).show();
-    }
-
-    @Override
-    public void onNothingSelected(AdapterView<?> adapterView) {
-
+        autoCompleteTextView3 = findViewById(R.id.autoComplete3);
+        String[] option3 = {"Fly", "Backstroke", "Breaststroke","Freestyle","I.M"};
+        ArrayAdapter arrayAdapter3 = new ArrayAdapter(this, R.layout.option_item, option3);
+        autoCompleteTextView3.setText(arrayAdapter3.getItem(0).toString(), false);
+        autoCompleteTextView3.setAdapter(arrayAdapter3);
     }
 }

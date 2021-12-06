@@ -1,25 +1,4 @@
 <resources>
     <string name="app_name">My Application</string>
 
-    <string-array name="Pool">
-        <item>Long Course M</item>
-        <item> Short Course Mts</item>
-        <item> Short Course Yds</item>
-    </string-array>
-
-    <string-array name="Distance">
-        <item>50</item>
-        <item>100</item>
-        <item>200</item>
-        <item>400</item>
-    </string-array>
-
-    <string-array name="Stroke">
-        <item>Fly</item>
-        <item>Backstroke</item>
-        <item>Breaststroke</item>
-        <item>Freestyle</item>
-        <item>I.M</item>
-    </string-array>
-
 </resources>

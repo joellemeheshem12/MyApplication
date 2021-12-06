@@ -7,48 +7,110 @@
     android:layout_height="match_parent"
     tools:context=".AddTimeActivity"
     android:orientation="vertical"
-    android:gravity="center"
+
     android:background="@drawable/blue">
 
-
-    <Spinner
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
-        android:id="@+id/Spinner1"
-        android:layout_width="120dp"
-        android:layout_height="50dp"
-
-        />
-
-    <Spinner
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
-        android:id="@+id/Spinner2"
-        android:layout_width="120dp"
-        android:layout_height="50dp"/>
-
-    <Spinner
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
-        android:id="@+id/Spinner3"
-        android:layout_width="120dp"
-        android:layout_height="50dp"/>
-
-    <com.google.android.material.textfield.TextInputLayout
+    <TextView
+        android:id="@+id/textView4"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="select"
+        android:gravity="center"
+        android:text="Add Swimming Time"
+        android:textStyle="bold"
+        android:textColor="#00296b"
+        android:textSize="20dp"
+        android:layout_marginTop="80dp"
+        />
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu"
+        android:layout_width="220dp"
+        android:layout_height="60dp"
+        android:hint="select pool type"
+      android:layout_gravity="center"
+        android:layout_marginTop="50dp">
+
+        <AutoCompleteTextView
+            android:id="@+id/autoComplete1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:enabled="false"
+            android:inputType="none"
+            android:textColor="#000" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="220dp"
+        android:layout_height="60dp"
+        android:hint="select distance"
+        android:layout_marginTop="10dp"
+        android:layout_gravity="center"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu">
 
         <AutoCompleteTextView
-            android:id="@+id/autoComplete"
+            android:id="@+id/autoComplete2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:enabled="false"
             android:inputType="none"
             android:textColor="#000"/>
 
+    </com.google.android.material.textfield.TextInputLayout>
 
-        </com.google.android.material.textfield.TextInputLayout>
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="220dp"
+        android:layout_height="60dp"
+        android:hint="select stroke"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu">
 
+        <AutoCompleteTextView
+            android:id="@+id/autoComplete3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:enabled="false"
+            android:inputType="none"
+            android:textColor="#000"/>
 
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <EditText
+        android:id="@+id/editTextTime"
+        android:layout_width="220dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="10dp"
+        android:layout_gravity="center"
+        android:ems="10"
+        android:inputType="time"
+        android:hint="set time"
+        />
+
+    <EditText
+        android:id="@+id/editTextDate"
+        android:layout_width="220dp"
+        android:layout_height="60dp"
+        android:ems="10"
+        android:hint="set date"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:inputType="date" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
+        android:textSize="17sp"
+        android:text="log in"
+        android:textColor="#f4a261"
+        android:layout_marginTop="40dp"
+        android:backgroundTint="@android:color/transparent"
+        app:strokeColor="#00296b"
+        app:strokeWidth="3dp"
+        android:layout_gravity="center" />
 
 
 </LinearLayout>
