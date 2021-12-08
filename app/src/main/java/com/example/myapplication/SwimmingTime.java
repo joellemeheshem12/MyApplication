@@ -1,18 +1,24 @@
 package com.example.myapplication;
 
+import java.sql.Time;
+import java.util.Date;
+
 public class SwimmingTime {
     protected String pool;
     protected int distance;
     protected String stroke;
-    protected String time;
-    protected String date;
+    protected Time time;
+    protected Date date;
 
-    public void swimmingTime(String pool,int distance,String stroke, String time,String date){
-        this.pool=pool;
-        this.distance=distance;
-        this.stroke=stroke;
-        this.time=time;
-        this.date=date;
+    public SwimmingTime(String pool, int distance, String stroke, Time time, Date date) {
+        this.pool = pool;
+        this.distance = distance;
+        this.stroke = stroke;
+        this.time = time;
+        this.date = date;
+    }
+
+    public void swimmingTime() {
     }
 
     public String getPool() {
@@ -39,19 +45,19 @@ public class SwimmingTime {
         this.stroke = stroke;
     }
 
-    public String getTime() {
+    public Time getTime() {
         return time;
     }
 
-    public void setTime(String time) {
+    public void setTime(Time time) {
         this.time = time;
     }
 
-    public String getDate() {
+    public Date getDate() {
         return date;
     }
 
-    public void setDate(String date) {
+    public void setDate(Date date) {
         this.date = date;
     }
 }

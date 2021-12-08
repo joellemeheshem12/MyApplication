@@ -1,27 +1,38 @@
 package com.example.myapplication;
 
+import java.sql.Time;
+import java.util.Date;
+
 public class Train {
-   protected String date ;
-   protected String time;
+   protected Date date ;
+   protected Time time;
 
-   public void train(String date,String time){
-       this.date=date;
-       this.time=time;
-   }
+    public void train(){
 
-    public String getDate() {
+    }
+
+    public Train(Date date, Time time) {
+        this.date = date;
+        this.time = time;
+    }
+
+    public Date getDate() {
         return date;
     }
 
-    public void setDate(String date) {
+    public void setDate(Date date) {
         this.date = date;
     }
 
-    public String getTime() {
+    public Time getTime() {
         return time;
     }
 
-    public void setTime(String time) {
+    public void setTime(Time time) {
         this.time = time;
     }
+
+
+
+
 }

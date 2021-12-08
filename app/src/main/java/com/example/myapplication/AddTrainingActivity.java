@@ -7,6 +7,7 @@ import android.app.TimePickerDialog;
 import android.os.Bundle;
 import android.text.InputType;
 import android.view.View;
+import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.TimePicker;
@@ -16,7 +17,7 @@ import java.util.Calendar;
 
 public class AddTrainingActivity extends AppCompatActivity {
 
-    EditText date_time;
+    Button date_time;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,7 +35,7 @@ public class AddTrainingActivity extends AppCompatActivity {
         });
     }
 
-    private void showDateTimeDialog(final EditText date_time_in) {
+    private void showDateTimeDialog(final Button date_time_in) {
         final Calendar calendar=Calendar.getInstance();
         DatePickerDialog.OnDateSetListener dateSetListener=new DatePickerDialog.OnDateSetListener() {
             @Override

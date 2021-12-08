@@ -11,6 +11,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 public class IntroActivity extends AppCompatActivity {
     private Button buttonTrainingSchedule,buttonMyTimes;
     @Override
@@ -27,6 +30,8 @@ public class IntroActivity extends AppCompatActivity {
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu,menu);
         return super.onCreateOptionsMenu(menu);
+
+
     }
 
     @Override
@@ -60,4 +65,5 @@ public class IntroActivity extends AppCompatActivity {
         Intent intent= new Intent(this,AddTrainingActivity.class) ;
         startActivity(intent);
     }
+
 }
