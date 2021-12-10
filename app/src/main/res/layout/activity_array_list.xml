@@ -6,7 +6,15 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".ArrayListActivity">
-<ListView
+
+
+    <Button
+        android:id="@+id/addButton"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:text="+" />
+
+    <ListView
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/myListView"

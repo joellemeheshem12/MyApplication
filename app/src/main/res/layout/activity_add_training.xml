@@ -39,7 +39,7 @@
 
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/add"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
@@ -47,7 +47,9 @@
         app:strokeColor="#00296b"
         app:strokeWidth="3dp"
         android:layout_gravity="center"
-        android:text="select date and time"
+        android:text="Add"
         android:textColor="#f4a261"
+        android:onClick="onClick"
         />
+
 </LinearLayout>

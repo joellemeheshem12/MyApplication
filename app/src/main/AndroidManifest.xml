@@ -12,9 +12,6 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication">
         <activity
-            android:name=".MainActivity2"
-            android:exported="true" />
-        <activity
             android:name=".AddTrainingActivity"
             android:exported="true" />
         <activity

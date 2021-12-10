@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.InputType;
 import android.view.View;
@@ -17,13 +18,14 @@ import java.util.Calendar;
 
 public class AddTrainingActivity extends AppCompatActivity {
 
-    Button date_time;
+    Button date_time, add;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_training);
-
+        add=findViewById(R.id.add);
         date_time=findViewById(R.id.date_time);
         date_time.setInputType(InputType.TYPE_NULL);
 
@@ -62,5 +64,9 @@ public class AddTrainingActivity extends AppCompatActivity {
 
         new DatePickerDialog(AddTrainingActivity.this,dateSetListener,calendar.get(Calendar.YEAR),calendar.get(Calendar.MONTH),calendar.get(Calendar.DAY_OF_MONTH)).show();
 
+    }
+    public void onClick(View view) {
+        Intent intent= new Intent(this, ArrayListActivity.class) ;
+        startActivity(intent);
     }
 }
