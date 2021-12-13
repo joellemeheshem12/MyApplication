@@ -3,11 +3,9 @@ package com.example.myapplication;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.ClipData;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Toast;
@@ -23,7 +21,7 @@ import java.sql.Time;
 import java.util.ArrayList;
 import java.util.Date;
 
-public class ArrayListActivity extends AppCompatActivity implements View.OnClickListener
+public class ArrayListActivity extends AppCompatActivity
 {
 
     //the object of the view- design
@@ -43,14 +41,11 @@ public class ArrayListActivity extends AppCompatActivity implements View.OnClick
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_array_list);
 
-        addButton = findViewById(R.id.addButton);
+        //addButton = findViewById(R.id.addButton);
         String UID =maFirebaseAuth.getUid();
         //build a ref for for user related data in real time database using user ID
         DatabaseReference myRef = database.getReference("users");
        //adds an item to the firebase under the referenced specified
-        Time time=new Time(5,7,1);
-        Date date=new Date(22,10,21);
-        myRef.push().setValue(new Train(date,time));
         list = new ArrayList<>();
 
 
@@ -93,7 +88,7 @@ public class ArrayListActivity extends AppCompatActivity implements View.OnClick
       });
     }
 
-    @Override
+
     public void onClick(View view) {
 
     }

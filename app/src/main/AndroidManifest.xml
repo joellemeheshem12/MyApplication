@@ -25,10 +25,6 @@
             android:name=".NotificationIntentService"
             android:exported="false" />
 
-        <activity
-            android:name=".video"
-            android:exported="true" />
-
         <service
             android:name=".MusicService"
             android:enabled="true"

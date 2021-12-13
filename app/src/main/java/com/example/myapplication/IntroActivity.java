@@ -57,7 +57,7 @@ public class IntroActivity extends AppCompatActivity {
         startActivity(intent);
     }
     public void Submit1(View view) {
-        Intent intent= new Intent(this,AddTrainingActivity.class) ;
+        Intent intent= new Intent(this,ArrayListActivity.class) ;
         startActivity(intent);
     }
 

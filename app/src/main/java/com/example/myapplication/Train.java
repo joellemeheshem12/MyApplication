@@ -1,13 +1,14 @@
 package com.example.myapplication;
 
+import java.io.Serializable;
 import java.sql.Time;
 import java.util.Date;
 
-public class Train {
+public class Train implements Serializable {
    protected Date date ;
    protected Time time;
 
-    public void train(){
+    public Train(){
 
     }
 
