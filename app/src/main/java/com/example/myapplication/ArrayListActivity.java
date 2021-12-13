@@ -20,6 +20,7 @@ import com.google.firebase.database.ValueEventListener;
 import java.sql.Time;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashMap;
 
 public class ArrayListActivity extends AppCompatActivity
 {
@@ -36,10 +37,13 @@ public class ArrayListActivity extends AppCompatActivity
    private FirebaseDatabase database = FirebaseDatabase.getInstance("https://joelle-759cf-default-rtdb.europe-west1.firebasedatabase.app/");
    private Button addButton;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_array_list);
+
+
 
         //addButton = findViewById(R.id.addButton);
         String UID =maFirebaseAuth.getUid();

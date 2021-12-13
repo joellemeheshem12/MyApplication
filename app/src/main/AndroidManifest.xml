@@ -10,7 +10,7 @@
         android:label="My Application "
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.MyApplication">
+        android:theme="@style/Theme.MaterialComponents.DayNight">
         <activity
             android:name=".AddTrainingActivity"
             android:exported="true" />

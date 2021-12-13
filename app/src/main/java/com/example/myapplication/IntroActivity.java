@@ -62,7 +62,7 @@ public class IntroActivity extends AppCompatActivity {
     }
 
     public void Submit2(View view) {
-        Intent intent= new Intent(this,AddTimeActivity.class) ;
+        Intent intent= new Intent(this,AddTrainingActivity.class) ;
         startActivity(intent);
     }
 

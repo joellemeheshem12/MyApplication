@@ -18,8 +18,8 @@ import java.util.Calendar;
 
 public class AddTrainingActivity extends AppCompatActivity {
 
-    Button date_time, add;
-
+    Button add;
+   Button date_time;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +29,14 @@ public class AddTrainingActivity extends AppCompatActivity {
         date_time=findViewById(R.id.date_time);
         date_time.setInputType(InputType.TYPE_NULL);
 
+        add.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i= new Intent(getApplicationContext(),ArrayListActivity.class);
+                i.putExtra("Time",date_time.getText().toString());
+                startActivity(i);
+            }
+        });
         date_time.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
