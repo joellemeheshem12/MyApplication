@@ -13,27 +13,45 @@ import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.TimePicker;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
+import java.sql.Time;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Date;
 
 public class AddTrainingActivity extends AppCompatActivity {
 
-    Button add;
-   Button date_time;
+    private Button add;
+    private Button date_time;
+    private Train t = null;
+    private Date date;
+    private Time time;
+    private FirebaseDatabase database = FirebaseDatabase.getInstance("https://joelle-759cf-default-rtdb.europe-west1.firebasedatabase.app/");
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_training);
+
+        String user = FirebaseAuth.getInstance().getUid();
+        DatabaseReference myRef = database.getReference("users/"+user);
+
         add=findViewById(R.id.add);
         date_time=findViewById(R.id.date_time);
         date_time.setInputType(InputType.TYPE_NULL);
+
 
         add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent i= new Intent(getApplicationContext(),ArrayListActivity.class);
-                i.putExtra("Time",date_time.getText().toString());
+                t = new Train(date, time);
+              //miss haneen to check whey not inserting FB
+                myRef.push().setValue(t);
+           //     i.putExtra("Time",date_time.getText().toString());
                 startActivity(i);
             }
         });
@@ -54,6 +72,7 @@ public class AddTrainingActivity extends AppCompatActivity {
                 calendar.set(Calendar.MONTH,month);
                 calendar.set(Calendar.DAY_OF_MONTH,dayOfMonth);
 
+                date = new Date(year, month, dayOfMonth);
                 TimePickerDialog.OnTimeSetListener timeSetListener=new TimePickerDialog.OnTimeSetListener() {
                     @Override
                     public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
@@ -63,11 +82,13 @@ public class AddTrainingActivity extends AppCompatActivity {
                         SimpleDateFormat simpleDateFormat=new SimpleDateFormat("dd.MM.yy HH:mm");
 
                         date_time_in.setText(simpleDateFormat.format(calendar.getTime()));
+                        time = new Time(hourOfDay, minute, 0);
                     }
                 };
 
                 new TimePickerDialog(AddTrainingActivity.this,timeSetListener,calendar.get(Calendar.HOUR_OF_DAY),calendar.get(Calendar.MINUTE),false).show();
             }
+
         };
 
         new DatePickerDialog(AddTrainingActivity.this,dateSetListener,calendar.get(Calendar.YEAR),calendar.get(Calendar.MONTH),calendar.get(Calendar.DAY_OF_MONTH)).show();
