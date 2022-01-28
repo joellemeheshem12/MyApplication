@@ -110,7 +110,8 @@
         android:backgroundTint="@android:color/transparent"
         app:strokeColor="#00296b"
         app:strokeWidth="3dp"
-        android:layout_gravity="center" />
+        android:layout_gravity="center"
+        android:onClick="onClick"/>
 
 
 </LinearLayout>

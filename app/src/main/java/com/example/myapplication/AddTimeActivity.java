@@ -7,11 +7,12 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
+import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.Toast;
 
 public class AddTimeActivity extends AppCompatActivity  {
-   private Spinner spinner1,spinner2,spinner3;
+    private Button button;
    AutoCompleteTextView autoCompleteTextView1,autoCompleteTextView2,autoCompleteTextView3;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,5 +36,8 @@ public class AddTimeActivity extends AppCompatActivity  {
         ArrayAdapter arrayAdapter3 = new ArrayAdapter(this, R.layout.option_item, option3);
         autoCompleteTextView3.setText(arrayAdapter3.getItem(0).toString(), false);
         autoCompleteTextView3.setAdapter(arrayAdapter3);
+    }
+
+    public void onClick(View view) {
     }
 }

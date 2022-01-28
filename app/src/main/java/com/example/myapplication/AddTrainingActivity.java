@@ -7,6 +7,7 @@ import android.app.TimePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.InputType;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
@@ -25,11 +26,12 @@ import java.util.Date;
 public class AddTrainingActivity extends AppCompatActivity {
 
     private Button add;
-    private Button date_time;
-    private Train t = null;
+    private EditText date_time;
+    private Train t = new Train();
     private Date date;
     private Time time;
     private FirebaseDatabase database = FirebaseDatabase.getInstance("https://joelle-759cf-default-rtdb.europe-west1.firebasedatabase.app/");
+    DatabaseReference myRef;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,65 +39,60 @@ public class AddTrainingActivity extends AppCompatActivity {
         setContentView(R.layout.activity_add_training);
 
         String user = FirebaseAuth.getInstance().getUid();
-        DatabaseReference myRef = database.getReference("users/"+user);
-
-        add=findViewById(R.id.add);
-        date_time=findViewById(R.id.date_time);
+        myRef = database.getReference("users/" + user);
+        add = findViewById(R.id.add);
+        date_time = findViewById(R.id.date_time);
         date_time.setInputType(InputType.TYPE_NULL);
-
-
-        add.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i= new Intent(getApplicationContext(),ArrayListActivity.class);
-                t = new Train(date, time);
-              //miss haneen to check whey not inserting FB
-                myRef.push().setValue(t);
-           //     i.putExtra("Time",date_time.getText().toString());
-                startActivity(i);
-            }
-        });
         date_time.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 showDateTimeDialog(date_time);
             }
         });
+
+        add.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(getApplicationContext(), ArrayListActivity.class);
+
+                t = new Train(date.toString(), time.toString());
+                myRef.push().setValue(t);
+
+                startActivity(i);
+            }
+        });
+
     }
 
-    private void showDateTimeDialog(final Button date_time_in) {
-        final Calendar calendar=Calendar.getInstance();
-        DatePickerDialog.OnDateSetListener dateSetListener=new DatePickerDialog.OnDateSetListener() {
+    private void showDateTimeDialog(final EditText date_time_in) {
+        final Calendar calendar = Calendar.getInstance();
+        DatePickerDialog.OnDateSetListener dateSetListener = new DatePickerDialog.OnDateSetListener() {
             @Override
             public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
-                calendar.set(Calendar.YEAR,year);
-                calendar.set(Calendar.MONTH,month);
-                calendar.set(Calendar.DAY_OF_MONTH,dayOfMonth);
+                calendar.set(Calendar.YEAR, year);
+                calendar.set(Calendar.MONTH, month);
+                calendar.set(Calendar.DAY_OF_MONTH, dayOfMonth);
 
                 date = new Date(year, month, dayOfMonth);
-                TimePickerDialog.OnTimeSetListener timeSetListener=new TimePickerDialog.OnTimeSetListener() {
+                TimePickerDialog.OnTimeSetListener timeSetListener = new TimePickerDialog.OnTimeSetListener() {
                     @Override
                     public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
-                        calendar.set(Calendar.HOUR_OF_DAY,hourOfDay);
-                        calendar.set(Calendar.MINUTE,minute);
+                        calendar.set(Calendar.HOUR_OF_DAY, hourOfDay);
+                        calendar.set(Calendar.MINUTE, minute);
 
-                        SimpleDateFormat simpleDateFormat=new SimpleDateFormat("dd.MM.yy HH:mm");
+                        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd.MM.yy HH:mm");
 
                         date_time_in.setText(simpleDateFormat.format(calendar.getTime()));
                         time = new Time(hourOfDay, minute, 0);
                     }
                 };
 
-                new TimePickerDialog(AddTrainingActivity.this,timeSetListener,calendar.get(Calendar.HOUR_OF_DAY),calendar.get(Calendar.MINUTE),false).show();
+                new TimePickerDialog(AddTrainingActivity.this, timeSetListener, calendar.get(Calendar.HOUR_OF_DAY), calendar.get(Calendar.MINUTE), false).show();
             }
 
         };
 
-        new DatePickerDialog(AddTrainingActivity.this,dateSetListener,calendar.get(Calendar.YEAR),calendar.get(Calendar.MONTH),calendar.get(Calendar.DAY_OF_MONTH)).show();
+        new DatePickerDialog(AddTrainingActivity.this, dateSetListener, calendar.get(Calendar.YEAR), calendar.get(Calendar.MONTH), calendar.get(Calendar.DAY_OF_MONTH)).show();
 
-    }
-    public void onClick(View view) {
-        Intent intent= new Intent(this, ArrayListActivity.class) ;
-        startActivity(intent);
     }
 }

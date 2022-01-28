@@ -34,8 +34,10 @@ public class CustomAdaptor extends ArrayAdapter<Train> {
             view= LayoutInflater.from(context).inflate(resource,parent,false);
         Train train =getItem(position);//method from the android studio , not related to item object
         if(train!=null) {
-            TextView textViewDescription = view.findViewById(R.id.textViewDesc);
-           
+            TextView textViewDate= view.findViewById(R.id.textViewDate);
+            TextView textViewTime = view.findViewById(R.id.textViewDescTime);
+            textViewDate.setText(train.getDate());
+            textViewTime.setText(train.getTime());
         }
         return view;
     }

@@ -51,7 +51,7 @@ public class LogInActivity extends AppCompatActivity implements  DialogInterface
     }
 
     public void login(View view) {
-        Intent intent = new Intent(this, IntroActivity.class);
+        Intent intent = new Intent(this, MainActivity.class);
         if (!editTextEmail.getText().toString().equals("") && editTextEmail.getText().toString().contains("@") && editTextEmail.getText().toString().contains(".")) {
             //saving email and  password of user in a local file for future use
             //create sp file
@@ -104,7 +104,7 @@ public class LogInActivity extends AppCompatActivity implements  DialogInterface
                             // Sign in success, update UI with the signed-in user's information
                             Log.d(TAG, "signInWithEmail:success");
                             FirebaseUser user = mAuth.getCurrentUser();
-                            Intent i = new Intent(LogInActivity.this, IntroActivity.class);
+                            Intent i = new Intent(LogInActivity.this, MainActivity.class);
                             startActivity(i);
                         } else {
                             // If sign in fails, display a message to the user.

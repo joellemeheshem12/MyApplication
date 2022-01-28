@@ -3,11 +3,7 @@ package com.example.myapplication;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.app.AlarmManager;
-import android.app.PendingIntent;
-import android.content.Context;
 import android.content.Intent;
-import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -16,39 +12,54 @@ import android.widget.Button;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
-    private static final int NOTIFICATION_REMINDER_NIGHT = 1;
-    private Button buttonLogin,buttonSignUP;
-    private Intent musicIntent;
-
+    private Button TrainingSchedule,MyTimes;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         setContentView(R.layout.activity_main);
-        buttonLogin=findViewById(R.id.buttonLogin);
-        buttonSignUP=findViewById(R.id.buttonSignUP);
+        TrainingSchedule=findViewById(R.id.TrainingSchedule);
+        MyTimes=findViewById(R.id.MyTimes);
 
-        //this will start the service which in turn will the music
-        musicIntent =new Intent(this,MusicService.class);
-        startService(musicIntent);
 
-        Intent notifyIntent = new Intent(this,NotificationReceiver.class);
-        PendingIntent pendingIntent = PendingIntent.getBroadcast
-                (this, NOTIFICATION_REMINDER_NIGHT, notifyIntent, PendingIntent.FLAG_UPDATE_CURRENT);
-        AlarmManager alarmManager = (AlarmManager) this.getSystemService(Context.ALARM_SERVICE);
-        alarmManager.setRepeating(AlarmManager.RTC_WAKEUP,  System.currentTimeMillis(),
-                1000 * 60 * 60 * 24, pendingIntent);
+    }
+//inflates the design of the required menu on top of the activity
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu,menu);
+        return super.onCreateOptionsMenu(menu);
+
+
     }
 
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.camera_menu:
+                Toast.makeText(this, "Camera", Toast.LENGTH_LONG).show();
+                Intent intent= new Intent(this,CameraActivity.class) ;
+                startActivity(intent);
+                break;
+            case R.id.exit_menu:
+                // closeApplication();
+                this.finishAffinity();
+                break;
 
-    public void SignUP(View view) {
-        Intent intent= new Intent(this,SignUPActivity.class) ;
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
+
+    public void onClick(View view) {
+        Intent intent= new Intent(this, CameraActivity.class) ;
+        startActivity(intent);
+    }
+    public void Submit1(View view) {
+        Intent intent= new Intent(this,ArrayListActivity.class) ;
         startActivity(intent);
     }
 
-    public void login(View view){
-        Intent intent= new Intent(this,LogInActivity.class) ;
+    public void Submit2(View view) {
+        Intent intent= new Intent(this,MyTimesListActivity.class) ;
         startActivity(intent);
     }
-
 }

@@ -1,65 +1,100 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
+
+    tools:context=".MainActivity"
     android:background="@drawable/blue"
-    tools:context=".MainActivity">
+    >
 
 
-
-<TextView
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:text="Welcome!"
-    android:textColor="#00296b"
-    android:textSize="40dp"
-    android:textStyle="bold"
-    android:layout_marginTop="100dp"
-    />
-    <TextView
-        android:id="@+id/textView2"
+    <LinearLayout
+        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Nice to see you again!"
-        android:textColor="#00296b"
-        android:textSize="20dp"
-        android:layout_marginTop="10dp"
-        />
+        android:layout_height="match_parent"
+        >
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="All The Categories"
+            android:textSize="25dp"
+            android:textStyle="bold"
+            android:textColor="#00296b"/>
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="100dp"
+            >
+        <Button
+            android:id="@+id/TrainingSchedule"
+            android:layout_width="180dp"
+            android:layout_height="180dp"
+            android:layout_marginLeft="10dp"
+            android:text="Training Schedule"
+            android:textColor="#f4a261"
+            android:backgroundTint="@android:color/transparent"
+            app:strokeColor="#00296b"
+            app:strokeWidth="3dp"
+            android:onClick="Submit1"
+            >
+        </Button>
+
+            <Button
+                android:id="@+id/MyTimes"
+                android:layout_width="180dp"
+                android:layout_height="180dp"
+               android:layout_marginLeft="210dp"
+                android:text="My Swimming Times"
+                android:textColor="#f4a261"
+                android:backgroundTint="@android:color/transparent"
+                app:strokeColor="#00296b"
+                app:strokeWidth="3dp"
+                android:onClick="Submit2"
+                >
+
+            </Button>
+        </RelativeLayout>
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="200dp"
+    android:layout_marginTop="50dp">
     <Button
-        android:id="@+id/buttonLogin"
-        android:layout_width="160dp"
-        android:layout_height="wrap_content"
-        android:textSize="17sp"
-        android:text="log in"
+        android:id="@+id/buttonMyProgress"
+        android:layout_width="180dp"
+        android:layout_height="180dp"
+        android:layout_marginLeft="210dp"
+        android:text="My Progress"
         android:textColor="#f4a261"
-        android:layout_marginTop="40dp"
         android:backgroundTint="@android:color/transparent"
         app:strokeColor="#00296b"
         app:strokeWidth="3dp"
-        android:onClick="login"
-        android:layout_gravity="center"
-        />
+        >
 
-
+    </Button>
 
     <Button
-        android:id="@+id/buttonSignUP"
-        android:layout_width="160dp"
-        android:layout_height="wrap_content"
-        android:textSize="17sp"
-        android:text="sign up"
+        android:id="@+id/buttonMy"
+        android:layout_width="180dp"
+        android:layout_height="180dp"
+        android:layout_marginLeft="10dp"
+        android:text="My"
         android:textColor="#f4a261"
-        android:layout_marginTop="10dp"
         android:backgroundTint="@android:color/transparent"
-        android:onClick="SignUP"
         app:strokeColor="#00296b"
         app:strokeWidth="3dp"
-        android:layout_gravity="center"
-        />
+
+        >
+
+    </Button>
+    </RelativeLayout>
+    </LinearLayout>
 
 
 
-</LinearLayout>
+</GridLayout>
+
+

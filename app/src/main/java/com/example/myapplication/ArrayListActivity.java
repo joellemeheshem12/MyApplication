@@ -3,10 +3,12 @@ package com.example.myapplication;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -22,7 +24,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
 
-public class ArrayListActivity extends AppCompatActivity
+public class ArrayListActivity extends AppCompatActivity implements View.OnClickListener
 {
 
     //the object of the view- design
@@ -35,7 +37,10 @@ public class ArrayListActivity extends AppCompatActivity
    private FirebaseAuth maFirebaseAuth = FirebaseAuth.getInstance();
    //gets the root of the real time database in the FB console
    private FirebaseDatabase database = FirebaseDatabase.getInstance("https://joelle-759cf-default-rtdb.europe-west1.firebasedatabase.app/");
-   private Button addButton;
+
+   private Button add;
+
+   ImageView imageViewAdd;
 
 
     @Override
@@ -44,7 +49,8 @@ public class ArrayListActivity extends AppCompatActivity
         setContentView(R.layout.activity_array_list);
 
 
-
+        imageViewAdd = findViewById(R.id.imageViewAdd);
+        imageViewAdd.setOnClickListener(this);
         //addButton = findViewById(R.id.addButton);
         String UID =maFirebaseAuth.getUid();
         //build a ref for for user related data in real time database using user ID
@@ -80,8 +86,8 @@ public class ArrayListActivity extends AppCompatActivity
           public void onDataChange(@NonNull DataSnapshot snapshot) {
               for (DataSnapshot dataSnapshot: snapshot.getChildren()){
                 Train train =dataSnapshot.getValue(Train.class);
-                  list.add(train);
-                  myAdapter.notifyDataSetChanged();
+                list.add(train);
+                myAdapter.notifyDataSetChanged();
               }
           }
 
@@ -92,8 +98,8 @@ public class ArrayListActivity extends AppCompatActivity
       });
     }
 
-
     public void onClick(View view) {
-
+        Intent intent= new Intent(this,AddTrainingActivity.class) ;
+        startActivity(intent);
     }
 }

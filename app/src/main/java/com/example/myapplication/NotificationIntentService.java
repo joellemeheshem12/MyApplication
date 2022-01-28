@@ -36,7 +36,7 @@ public class NotificationIntentService extends IntentService {
         noBuilder.setSmallIcon(R.drawable.ic_baseline_wb_cloudy_24);
         //this intent will be pending until the user clicks on the notification
         //and will activate the activity specified in the intent
-        Intent noIntent1 = new Intent(this, MainActivity.class);
+        Intent noIntent1 = new Intent(this, FirstActivity.class);
         PendingIntent pendingIntent = PendingIntent.getActivity(this,2,noIntent1,PendingIntent.FLAG_UPDATE_CURRENT);
         noBuilder.setContentIntent(pendingIntent);
 

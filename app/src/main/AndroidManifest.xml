@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MaterialComponents.DayNight">
         <activity
+            android:name=".MyTimesListActivity"
+            android:exported="true" />
+        <activity
             android:name=".AddTrainingActivity"
             android:exported="true" />
         <activity
@@ -24,7 +27,6 @@
         <service
             android:name=".NotificationIntentService"
             android:exported="false" />
-
         <service
             android:name=".MusicService"
             android:enabled="true"
@@ -40,7 +42,7 @@
             android:name=".LogInActivity"
             android:exported="true" />
         <activity
-            android:name=".IntroActivity"
+            android:name=".MainActivity"
             android:exported="true" />
         <activity
             android:name=".SignUPActivity"
@@ -49,7 +51,7 @@
             android:name=".ArrayListActivity"
             android:exported="true" />
         <activity
-            android:name=".MainActivity"
+            android:name=".FirstActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

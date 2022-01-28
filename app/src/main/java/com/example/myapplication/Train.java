@@ -5,31 +5,31 @@ import java.sql.Time;
 import java.util.Date;
 
 public class Train implements Serializable {
-   protected Date date ;
-   protected Time time;
+   protected String date ;
+   protected String time;
 
     public Train(){
 
     }
 
-    public Train(Date date, Time time) {
+    public Train(String date, String time) {
         this.date = date;
         this.time = time;
     }
 
-    public Date getDate() {
+    public String getDate() {
         return date;
     }
 
-    public void setDate(Date date) {
+    public void setDate(String date) {
         this.date = date;
     }
 
-    public Time getTime() {
+    public String getTime() {
         return time;
     }
 
-    public void setTime(Time time) {
+    public void setTime(String time) {
         this.time = time;
     }
 
