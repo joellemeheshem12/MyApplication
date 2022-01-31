@@ -16,7 +16,7 @@
             android:layout_height="wrap_content" />
 
         <LinearLayout
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
@@ -25,13 +25,15 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="description"
+                android:textColor="#123456"
                 android:textSize="24sp" />
 
             <TextView
-                android:id="@+id/textViewDescTime"
+                android:id="@+id/textViewTime"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="description"
+                android:textColor="#123456"
                 android:textSize="24sp" />
         </LinearLayout>
 

@@ -54,7 +54,7 @@ public class ArrayListActivity extends AppCompatActivity implements View.OnClick
         //addButton = findViewById(R.id.addButton);
         String UID =maFirebaseAuth.getUid();
         //build a ref for for user related data in real time database using user ID
-        DatabaseReference myRef = database.getReference("users");
+        DatabaseReference myRef = database.getReference("users/"+UID);
        //adds an item to the firebase under the referenced specified
         list = new ArrayList<>();
 

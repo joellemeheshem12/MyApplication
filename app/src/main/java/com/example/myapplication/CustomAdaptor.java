@@ -35,7 +35,7 @@ public class CustomAdaptor extends ArrayAdapter<Train> {
         Train train =getItem(position);//method from the android studio , not related to item object
         if(train!=null) {
             TextView textViewDate= view.findViewById(R.id.textViewDate);
-            TextView textViewTime = view.findViewById(R.id.textViewDescTime);
+            TextView textViewTime = view.findViewById(R.id.textViewTime);
             textViewDate.setText(train.getDate());
             textViewTime.setText(train.getTime());
         }

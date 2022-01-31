@@ -56,6 +56,7 @@ public class AddTrainingActivity extends AppCompatActivity {
                 Intent i = new Intent(getApplicationContext(), ArrayListActivity.class);
 
                 t = new Train(date.toString(), time.toString());
+                Log.d("TRAIN:",t.toString());
                 myRef.push().setValue(t);
 
                 startActivity(i);

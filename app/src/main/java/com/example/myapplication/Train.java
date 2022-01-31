@@ -33,7 +33,11 @@ public class Train implements Serializable {
         this.time = time;
     }
 
-
-
-
+    @Override
+    public String toString() {
+        return "Train{" +
+                "date='" + date + '\'' +
+                ", time='" + time + '\'' +
+                '}';
+    }
 }
