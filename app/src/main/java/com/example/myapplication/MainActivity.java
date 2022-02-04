@@ -59,7 +59,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void Submit2(View view) {
-        Intent intent= new Intent(this,MyTimesListActivity.class) ;
+        Intent intent= new Intent(this, MySwimmingTimesListActivity.class) ;
         startActivity(intent);
     }
 }

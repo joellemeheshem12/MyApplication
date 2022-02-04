@@ -1,16 +1,17 @@
 package com.example.myapplication;
 
+import java.io.Serializable;
 import java.sql.Time;
 import java.util.Date;
 
-public class SwimmingTime {
+public class SwimmingTime implements Serializable {
     protected String pool;
     protected int distance;
     protected String stroke;
-    protected Time time;
-    protected Date date;
+    protected String time;
+    protected String date;
 
-    public SwimmingTime(String pool, int distance, String stroke, Time time, Date date) {
+    public SwimmingTime(String pool, int distance, String stroke, String time,String date) {
         this.pool = pool;
         this.distance = distance;
         this.stroke = stroke;
@@ -18,7 +19,8 @@ public class SwimmingTime {
         this.date = date;
     }
 
-    public void swimmingTime() {
+    public SwimmingTime() {
+
     }
 
     public String getPool() {
@@ -45,19 +47,30 @@ public class SwimmingTime {
         this.stroke = stroke;
     }
 
-    public Time getTime() {
+    public String getTime() {
         return time;
     }
 
-    public void setTime(Time time) {
+    public void setTime(String time) {
         this.time = time;
     }
 
-    public Date getDate() {
+    public String getDate() {
         return date;
     }
 
-    public void setDate(Date date) {
+    public void setDate(String date) {
         this.date = date;
+    }
+
+    @Override
+    public String toString() {
+        return "SwimmingTime{" +
+                "pool='" + pool + '\'' +
+                ", distance=" + distance +
+                ", stroke='" + stroke + '\'' +
+                ", time='" + time + '\'' +
+                ", date='" + date + '\'' +
+                '}';
     }
 }

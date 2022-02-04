@@ -4,22 +4,28 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MyTimesListActivity"
-    android:background="@drawable/blue">
+    tools:context=".MySwimmingTimesListActivity"
+    android:background="@drawable/blue"
+    android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:orientation="vertical">
+
+        <ListView
+            android:id="@+id/myListView1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:descendantFocusability="blocksDescendants"></ListView>
+    </LinearLayout>
 
     <Button
         android:id="@+id/add"
-        android:layout_width="70dp"
-        android:layout_height="50dp"
-        android:layout_marginLeft="320dp"
-        android:text="Add"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Button"
         android:onClick="onClick"/>
 
-    <ListView
-        android:id="@+id/myListView"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:descendantFocusability="blocksDescendants">
-
-    </ListView>
 </LinearLayout>
+
+

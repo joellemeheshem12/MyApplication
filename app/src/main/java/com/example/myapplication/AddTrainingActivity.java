@@ -39,7 +39,7 @@ public class AddTrainingActivity extends AppCompatActivity {
         setContentView(R.layout.activity_add_training);
 
         String user = FirebaseAuth.getInstance().getUid();
-        myRef = database.getReference("users/" + user);
+        myRef = database.getReference("users/" + user+"/Trainning");
         add = findViewById(R.id.add);
         date_time = findViewById(R.id.date_time);
         date_time.setInputType(InputType.TYPE_NULL);
