@@ -21,16 +21,16 @@ import java.sql.Time;
 import java.util.Date;
 
 public class AddSwimmingTimeActivity extends AppCompatActivity  {
+    AutoCompleteTextView autoCompleteTextView1,autoCompleteTextView2,autoCompleteTextView3;
     private Button add1;
-    private FirebaseDatabase database = FirebaseDatabase.getInstance("https://joelle-759cf-default-rtdb.europe-west1.firebasedatabase.app/");
-    DatabaseReference myRef;
     private SwimmingTime st = new SwimmingTime();
-   AutoCompleteTextView autoCompleteTextView1,autoCompleteTextView2,autoCompleteTextView3;
     private Date date;
     private Time time;
     private String pool;
     private int distance;
     private String stoke;
+    private FirebaseDatabase database = FirebaseDatabase.getInstance("https://joelle-759cf-default-rtdb.europe-west1.firebasedatabase.app/");
+    DatabaseReference myRef;
 
 
     @Override
@@ -39,7 +39,7 @@ public class AddSwimmingTimeActivity extends AppCompatActivity  {
         setContentView(R.layout.activity_add_time);
 
         String user = FirebaseAuth.getInstance().getUid();
-        myRef = database.getReference("users/" + user);
+        myRef = database.getReference("users/" + user+"/SwimmingTime");
         add1 = findViewById(R.id.add1);
 
         autoCompleteTextView1 = findViewById(R.id.autoComplete1);
@@ -59,15 +59,20 @@ public class AddSwimmingTimeActivity extends AppCompatActivity  {
         ArrayAdapter arrayAdapter3 = new ArrayAdapter(this, R.layout.option_item, option3);
         autoCompleteTextView3.setText(arrayAdapter3.getItem(0).toString(), false);
         autoCompleteTextView3.setAdapter(arrayAdapter3);
+
+
+        add1.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View view) {
+                Intent i = new Intent(getApplicationContext(), MySwimmingTimesListActivity.class);
+
+                st = new SwimmingTime(pool.toString(),(int)distance,stoke.toString(),time.toString(),date.toString());
+                Log.d("SwimmingTime:",st.toString());
+                myRef.push().setValue(st);
+
+                startActivity(i);
+            }
+        });
     }
 
-    public void onClick(View view) {
-        Intent i = new Intent(getApplicationContext(), MySwimmingTimesListActivity.class);
 
-        st = new SwimmingTime(pool.toString(),(int)distance,stoke.toString(),time.toString(),date.toString());
-        Log.d("SwimmingTime:",st.toString());
-        myRef.push().setValue(st);
-
-        startActivity(i);
-    }
 }
