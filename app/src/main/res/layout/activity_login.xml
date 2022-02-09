@@ -37,7 +37,7 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="textEmailAddress"
-        android:hint="email"
+        android:hint=" email"
         android:padding="15dp"
          />
 
@@ -47,7 +47,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:hint="password"
+        android:hint=" password"
         android:inputType="textPassword"
         android:layout_marginTop="10dp"
         />

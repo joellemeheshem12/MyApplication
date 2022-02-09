@@ -1,6 +1,7 @@
 package com.example.myapplication;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.util.Pools;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -23,7 +24,7 @@ import java.util.Date;
 public class AddSwimmingTimeActivity extends AppCompatActivity  {
     AutoCompleteTextView autoCompleteTextView1,autoCompleteTextView2,autoCompleteTextView3;
     private Button add1;
-    private SwimmingTime st = new SwimmingTime();
+    private SwimmingTime st ;
     private Date date;
     private Time time;
     private String pool;
@@ -48,6 +49,7 @@ public class AddSwimmingTimeActivity extends AppCompatActivity  {
         autoCompleteTextView1.setText(arrayAdapter1.getItem(0).toString(), false);
         autoCompleteTextView1.setAdapter(arrayAdapter1);
 
+
         autoCompleteTextView2 = findViewById(R.id.autoComplete2);
         String[] option2 = {"50", "100", "200","400"};
         ArrayAdapter arrayAdapter2 = new ArrayAdapter(this, R.layout.option_item, option2);
@@ -59,6 +61,7 @@ public class AddSwimmingTimeActivity extends AppCompatActivity  {
         ArrayAdapter arrayAdapter3 = new ArrayAdapter(this, R.layout.option_item, option3);
         autoCompleteTextView3.setText(arrayAdapter3.getItem(0).toString(), false);
         autoCompleteTextView3.setAdapter(arrayAdapter3);
+
 
 
         add1.setOnClickListener(new View.OnClickListener(){
@@ -73,6 +76,4 @@ public class AddSwimmingTimeActivity extends AppCompatActivity  {
             }
         });
     }
-
-
 }

@@ -7,7 +7,6 @@
     android:layout_height="match_parent"
     tools:context=".AddSwimmingTimeActivity"
     android:orientation="vertical"
-
     android:background="@drawable/blue">
 
     <TextView
@@ -111,7 +110,7 @@
         app:strokeColor="#00296b"
         app:strokeWidth="3dp"
         android:layout_gravity="center"
-        android:onClick="onClick"/>
+      />
 
 
 </LinearLayout>
