@@ -27,8 +27,8 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 
-public class AddSwimmingTimeActivity extends AppCompatActivity  {
-    AutoCompleteTextView autoCompleteTextView1,autoCompleteTextView2,autoCompleteTextView3;
+public class AddSwimmingTimeActivity extends AppCompatActivity  implements AdapterView.OnItemSelectedListener {
+    private AutoCompleteTextView pools,dis,stroke1;
     private Button add1;
     private SwimmingTime st ;
     private Date date;
@@ -37,8 +37,12 @@ public class AddSwimmingTimeActivity extends AppCompatActivity  {
     private int distance;
     private String stoke;
     private FirebaseDatabase database = FirebaseDatabase.getInstance("https://joelle-759cf-default-rtdb.europe-west1.firebasedatabase.app/");
-    DatabaseReference myRef;
-    EditText editTextDate;
+    private DatabaseReference myRef;
+    private EditText editTextDate;
+    private String[] poolType = {"Long Course M", "Short Course Mts", "Short Course Yds"};
+    private String[] distance1 = {"50","100","200","400"};
+    private String[] strokeType = {"Fly", "Backstroke", "Breaststroke","Freestyle","I.M"};
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -69,39 +73,54 @@ public class AddSwimmingTimeActivity extends AppCompatActivity  {
         });
 
 
-        autoCompleteTextView1 = findViewById(R.id.autoComplete1);
-        String[] option1 = {"Long Course M", "Short Course Mts", "Short Course Yds"};
-        ArrayAdapter arrayAdapter1 = new ArrayAdapter(this, R.layout.option_item, option1);
-        autoCompleteTextView1.setText(arrayAdapter1.getItem(0).toString(), false);
-        autoCompleteTextView1.setAdapter(arrayAdapter1);
+        pools = findViewById(R.id.pools);
+        ArrayAdapter arrayAdapter1 = new ArrayAdapter(this, R.layout.option_item, poolType);
+        pools.setText(arrayAdapter1.getItem(0).toString(), false);
+        pools.setAdapter(arrayAdapter1);
+        pools.setOnItemSelectedListener(this);
 
 
+        dis = findViewById(R.id.dis);
+        ArrayAdapter arrayAdapter2 = new ArrayAdapter(this, R.layout.option_item,distance1);
+        dis.setText(arrayAdapter2.getItem(0).toString(), false);
+        dis.setAdapter(arrayAdapter2);
+        dis.setOnItemSelectedListener(this);
 
-        autoCompleteTextView2 = findViewById(R.id.autoComplete2);
-        String[] option2 = {"50", "100", "200","400"};
-        ArrayAdapter arrayAdapter2 = new ArrayAdapter(this, R.layout.option_item, option2);
-        autoCompleteTextView2.setText(arrayAdapter2.getItem(0).toString(), false);
-        autoCompleteTextView2.setAdapter(arrayAdapter2);
-
-
-        autoCompleteTextView3 = findViewById(R.id.autoComplete3);
-        String[] option3 = {"Fly", "Backstroke", "Breaststroke","Freestyle","I.M"};
-        ArrayAdapter arrayAdapter3 = new ArrayAdapter(this, R.layout.option_item, option3);
-        autoCompleteTextView3.setText(arrayAdapter3.getItem(0).toString(), false);
-        autoCompleteTextView3.setAdapter(arrayAdapter3);
-
+        stroke1 = findViewById(R.id.stroke1);
+        ArrayAdapter arrayAdapter3 = new ArrayAdapter(this, R.layout.option_item, strokeType);
+        stroke1.setText(arrayAdapter3.getItem(0).toString(), false);
+        stroke1.setAdapter(arrayAdapter3);
+        stroke1.setOnItemSelectedListener(this);
 
 
         add1.setOnClickListener(new View.OnClickListener(){
             public void onClick(View view) {
                 Intent i = new Intent(getApplicationContext(), MySwimmingTimesListActivity.class);
 
-                st = new SwimmingTime(pool.toString(),(int)distance,stoke.toString(),time.toString(),date.toString());
+                st = new SwimmingTime(pool.toString(), (int)distance,stoke.toString(),time.toString(),date.toString());
                 Log.d("SwimmingTime:",st.toString());
                 myRef.push().setValue(st);
 
                 startActivity(i);
             }
         });
+    }
+
+    @Override
+    public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+        if(view == pools){
+            pool = poolType[i];
+        }else if(view == dis){
+            distance = Integer.parseInt(distance1[i]);
+        }else if(view == stroke1){
+            stoke = strokeType[i];
+        }
+    }
+
+    @Override
+    public void onNothingSelected(AdapterView<?> adapterView) {
+        pool = poolType[0];
+        distance = Integer.parseInt(distance1[0]);
+        stoke = strokeType[0];
     }
 }

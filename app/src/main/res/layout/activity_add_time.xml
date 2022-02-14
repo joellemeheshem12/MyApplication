@@ -31,7 +31,7 @@
         android:layout_marginTop="50dp">
 
         <AutoCompleteTextView
-            android:id="@+id/autoComplete1"
+            android:id="@+id/pools"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:enabled="false"
@@ -50,7 +50,7 @@
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu">
 
         <AutoCompleteTextView
-            android:id="@+id/autoComplete2"
+            android:id="@+id/dis"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:enabled="false"
@@ -68,7 +68,7 @@
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu">
 
         <AutoCompleteTextView
-            android:id="@+id/autoComplete3"
+            android:id="@+id/stroke1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:enabled="false"
@@ -111,6 +111,4 @@
         app:strokeWidth="3dp"
         android:layout_gravity="center"
       />
-
-
 </LinearLayout>
