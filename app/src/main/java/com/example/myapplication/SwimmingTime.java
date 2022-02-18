@@ -19,8 +19,7 @@ public class SwimmingTime implements Serializable {
         this.date = date;
     }
 
-    public SwimmingTime(String pool, int distance, String stroke, String time, String date) {
-
+    public SwimmingTime(){
     }
 
 

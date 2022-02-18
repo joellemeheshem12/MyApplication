@@ -42,6 +42,7 @@ public class AddSwimmingTimeActivity extends AppCompatActivity  implements Adapt
     private String[] poolType = {"Long Course M", "Short Course Mts", "Short Course Yds"};
     private String[] distance1 = {"50","100","200","400"};
     private String[] strokeType = {"Fly", "Backstroke", "Breaststroke","Freestyle","I.M"};
+    private EditText editTextTime;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,6 +52,7 @@ public class AddSwimmingTimeActivity extends AppCompatActivity  implements Adapt
         String user = FirebaseAuth.getInstance().getUid();
         myRef = database.getReference("users/" + user+"/SwimmingTime");
         add1 = findViewById(R.id.add1);
+        editTextTime=findViewById(R.id.editTextTime);
         final Calendar calendar=Calendar.getInstance();
         editTextDate=findViewById(R.id.editTextDate);
         editTextDate.setInputType(InputType.TYPE_NULL);
@@ -97,7 +99,7 @@ public class AddSwimmingTimeActivity extends AppCompatActivity  implements Adapt
             public void onClick(View view) {
                 Intent i = new Intent(getApplicationContext(), MySwimmingTimesListActivity.class);
 
-                st = new SwimmingTime(pool.toString(), (int)distance,stoke.toString(),time.toString(),date.toString());
+                st = new SwimmingTime(pool.toString(), distance,stoke.toString(),time.toString(),date.toString());
                 Log.d("SwimmingTime:",st.toString());
                 myRef.push().setValue(st);
 
