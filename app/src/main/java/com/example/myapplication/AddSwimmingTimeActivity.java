@@ -99,7 +99,7 @@ public class AddSwimmingTimeActivity extends AppCompatActivity  implements Adapt
             public void onClick(View view) {
                 Intent i = new Intent(getApplicationContext(), MySwimmingTimesListActivity.class);
 
-                st = new SwimmingTime(pool.toString(), distance,stoke.toString(),time.toString(),date.toString());
+                st = new SwimmingTime(pool, distance,stoke,editTextTime.getText().toString(),date.toString());
                 Log.d("SwimmingTime:",st.toString());
                 myRef.push().setValue(st);
 
