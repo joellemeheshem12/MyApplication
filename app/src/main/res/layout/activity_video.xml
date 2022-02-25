@@ -1,17 +1,122 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".VideoActivity">
-    
+    android:orientation="vertical"
+    tools:context=".VideoActivity"
+    android:background="@drawable/lightblue">
 
-    <VideoView
-        android:id="@+id/videoView"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
+
+    <TextView
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="1" />
+        android:text="Fly Technique"
+        android:textSize="20dp"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+       > </TextView>
+
+    <com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView
+        android:id="@+id/flyVideo1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:videoId="VQpFhM18zu4"
+        app:autoPlay="true"
+        android:layout_marginTop="10dp"/>
 
 
-</LinearLayout>
+        <com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView
+            android:id="@+id/backVideo2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            app:autoPlay="true"
+            app:videoId="MrFt6JHii8w" />
+
+        <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="BackStroke Technique"
+        android:textSize="20dp"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        > </TextView>
+
+    <com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView
+        android:id="@+id/backVideo1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:videoId="YkjOvxHsY1g"
+        app:autoPlay="true"
+        android:layout_marginTop="10dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="BackStroke Technique"
+            android:textSize="20dp"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            > </TextView>
+
+        <com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView
+            android:id="@+id/breastVideo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:videoId="fWvNbyPpFh8"
+            app:autoPlay="true"
+            android:layout_marginTop="10dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="FreeStyle Technique "
+            android:textSize="20dp"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            > </TextView>
+
+        <com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView
+            android:id="@+id/freeVideo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:videoId="uiI6Z_0Q2Io"
+            app:autoPlay="true"
+            android:layout_marginTop="10dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="How To Do Turns "
+            android:textSize="20dp"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            > </TextView>
+
+        <com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView
+            android:id="@+id/turnVideo1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:videoId="PqXrZuNCthg"
+            app:autoPlay="true"
+            android:layout_marginTop="10dp"/>
+
+        <com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView
+            android:id="@+id/turnVideo2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:videoId="rPrSVDBdaDM"
+            app:autoPlay="true"
+            android:layout_marginTop="10dp"/>
+
+
+    </LinearLayout>
+</ScrollView>
