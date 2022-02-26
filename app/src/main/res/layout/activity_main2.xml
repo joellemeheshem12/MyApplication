@@ -7,7 +7,7 @@
     android:orientation="vertical"
     android:gravity="center"
     tools:context=".MainActivity2"
-    android:background="@drawable/lightblue">
+    android:background="#">
 
     <androidx.cardview.widget.CardView
         android:onClick="onClick1"
@@ -16,14 +16,15 @@
         app:cardCornerRadius="20dp"
         app:cardElevation="10dp"
         app:contentPadding="20dp"
-        app:cardBackgroundColor="#fff8f0"
+        app:cardBackgroundColor="#dce9fc"
        >
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Training Schedule"
             android:textStyle="bold"
-            android:textColor="@color/black">
+            android:textColor="#f4a261"
+            android:textSize="18dp">
         </TextView>
         <TextView
             android:layout_width="wrap_content"
@@ -51,13 +52,14 @@
         app:cardElevation="10dp"
         app:contentPadding="20dp"
         android:layout_marginTop="20dp"
+
         >
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="My Swimming Times"
             android:textStyle="bold"
-            android:textColor="@color/black">
+            android:textColor="#00296b">
         </TextView>
         <ImageView
             android:layout_width="wrap_content"
@@ -75,13 +77,14 @@
         app:cardElevation="10dp"
         app:contentPadding="20dp"
         android:layout_marginTop="20dp"
+
         >
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Technique Videos"
             android:textStyle="bold"
-            android:textColor="@color/black">
+            android:textColor="#f4a261">
         </TextView>
         <ImageView
             android:layout_width="wrap_content"

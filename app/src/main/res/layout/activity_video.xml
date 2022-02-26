@@ -33,14 +33,6 @@
         android:layout_marginTop="10dp"/>
 
 
-        <com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView
-            android:id="@+id/backVideo2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            app:autoPlay="true"
-            app:videoId="MrFt6JHii8w" />
-
         <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -58,10 +50,18 @@
         app:autoPlay="true"
         android:layout_marginTop="10dp"/>
 
+        <com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView
+            android:id="@+id/backVideo2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            app:autoPlay="true"
+            app:videoId="MrFt6JHii8w" />
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="BackStroke Technique"
+            android:text="BreastStroke Technique"
             android:textSize="20dp"
             android:textColor="@color/black"
             android:textStyle="bold"
