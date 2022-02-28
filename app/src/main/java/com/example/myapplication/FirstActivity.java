@@ -42,7 +42,7 @@ public class FirstActivity extends AppCompatActivity {
     }
 
     public void login(View view){
-        Intent intent= new Intent(this,LogInActivity.class) ;
+        Intent intent= new Intent(this,konfettiActivity.class) ;
         startActivity(intent);
     }
 

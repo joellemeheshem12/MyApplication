@@ -3,15 +3,19 @@
     package="com.example.myapplication">
 
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
-   <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
-        android:usesCleartextTraffic="true"
         android:icon="@mipmap/ic_launcher"
         android:label="My Application "
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.MaterialComponents.DayNight">
+        android:theme="@style/Theme.MaterialComponents.DayNight"
+        android:usesCleartextTraffic="true">
+        <activity
+            android:name=".konfettiActivity"
+            android:exported="true" />
         <activity
             android:name=".VideoActivity"
             android:exported="true" />
