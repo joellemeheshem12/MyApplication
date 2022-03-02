@@ -41,6 +41,7 @@ dependencies {
 
     implementation 'com.pierfrancescosoffritti.androidyoutubeplayer:core:11.0.1'
     implementation 'nl.dionsegijn:konfetti-xml:2.0.2'
+    implementation 'com.mikhaellopez:circularimageview:4.3.0'
 
 
 

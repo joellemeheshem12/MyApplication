@@ -16,12 +16,18 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class SignUPActivity extends AppCompatActivity  {
     private EditText editTextFullName,editTextUserName,editTextPassword,editTextEmail;
     private Button buttonSignUP;
     private FirebaseAuth mAuth;
     private static final String TAG = "FIREBASE";
+    private FirebaseAuth maFirebaseAuth=FirebaseAuth.getInstance();
+    //write a message to the dataBase
+    // gets the root of the real time database in the FB console
+    private FirebaseDatabase database = FirebaseDatabase.getInstance("https://joelle-759cf-default-rtdb.europe-west1.firebasedatabase.app/");
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
