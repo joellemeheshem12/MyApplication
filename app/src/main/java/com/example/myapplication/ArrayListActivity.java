@@ -49,7 +49,7 @@ public class ArrayListActivity extends AppCompatActivity implements View.OnClick
         setContentView(R.layout.activity_array_list);
 
 
-        imageViewAdd = findViewById(R.id.imageViewAdd);
+        imageViewAdd = findViewById(R.id.createnotefab);
         imageViewAdd.setOnClickListener(this);
         //addButton = findViewById(R.id.addButton);
         String UID =maFirebaseAuth.getUid();

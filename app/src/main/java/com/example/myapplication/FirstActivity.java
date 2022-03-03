@@ -6,9 +6,12 @@ import android.app.AlarmManager;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+
+import java.util.Objects;
 
 public class FirstActivity extends AppCompatActivity {
     private static final int NOTIFICATION_REMINDER_NIGHT = 1;
@@ -19,6 +22,7 @@ public class FirstActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        Objects.requireNonNull(getSupportActionBar()).setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.colorPrimary)));
         setContentView(R.layout.activity_first);
         buttonLogin=findViewById(R.id.buttonLogin);
         buttonSignUP=findViewById(R.id.buttonSignUP);
