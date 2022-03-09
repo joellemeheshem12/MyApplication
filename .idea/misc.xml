@@ -9,19 +9,22 @@
         <entry key="..\:/Users/Joelle/AndroidStudioProjects/MyApplication/app/src/main/res/drawable/ic_add_black_24dp.xml" value="0.19166666666666668" />
         <entry key="..\:/Users/Joelle/AndroidStudioProjects/MyApplication/app/src/main/res/drawable/ic_baseline_format_list_bulleted_24.xml" value="0.175" />
         <entry key="..\:/Users/Joelle/AndroidStudioProjects/MyApplication/app/src/main/res/drawable/ic_baseline_video_library_24.xml" value="0.175" />
+        <entry key="..\:/Users/Joelle/AndroidStudioProjects/MyApplication/app/src/main/res/drawable/ic_camera.xml" value="0.19166666666666668" />
         <entry key="..\:/Users/Joelle/AndroidStudioProjects/MyApplication/app/src/main/res/drawable/password.xml" value="0.1" />
         <entry key="..\:/Users/Joelle/AndroidStudioProjects/MyApplication/app/src/main/res/drawable/person.xml" value="0.19583333333333333" />
+        <entry key="..\:/Users/Joelle/AndroidStudioProjects/MyApplication/app/src/main/res/layout/activity_account.xml" value="0.5" />
         <entry key="..\:/Users/Joelle/AndroidStudioProjects/MyApplication/app/src/main/res/layout/activity_add_time.xml" value="0.1732283464566929" />
         <entry key="..\:/Users/Joelle/AndroidStudioProjects/MyApplication/app/src/main/res/layout/activity_add_training.xml" value="0.4466666666666667" />
         <entry key="..\:/Users/Joelle/AndroidStudioProjects/MyApplication/app/src/main/res/layout/activity_array_list.xml" value="0.1" />
+        <entry key="..\:/Users/Joelle/AndroidStudioProjects/MyApplication/app/src/main/res/layout/activity_camera.xml" value="0.1272644927536232" />
         <entry key="..\:/Users/Joelle/AndroidStudioProjects/MyApplication/app/src/main/res/layout/activity_intro.xml" value="0.22" />
         <entry key="..\:/Users/Joelle/AndroidStudioProjects/MyApplication/app/src/main/res/layout/activity_konfetti.xml" value="0.1" />
-        <entry key="..\:/Users/Joelle/AndroidStudioProjects/MyApplication/app/src/main/res/layout/activity_login.xml" value="0.22" />
+        <entry key="..\:/Users/Joelle/AndroidStudioProjects/MyApplication/app/src/main/res/layout/activity_login.xml" value="0.1" />
         <entry key="..\:/Users/Joelle/AndroidStudioProjects/MyApplication/app/src/main/res/layout/activity_main.xml" value="0.22" />
         <entry key="..\:/Users/Joelle/AndroidStudioProjects/MyApplication/app/src/main/res/layout/activity_main2.xml" value="0.14666666666666667" />
         <entry key="..\:/Users/Joelle/AndroidStudioProjects/MyApplication/app/src/main/res/layout/activity_my_times_list.xml" value="0.13958333333333334" />
         <entry key="..\:/Users/Joelle/AndroidStudioProjects/MyApplication/app/src/main/res/layout/activity_profile.xml" value="0.22" />
-        <entry key="..\:/Users/Joelle/AndroidStudioProjects/MyApplication/app/src/main/res/layout/activity_sign_upactivity.xml" value="0.22" />
+        <entry key="..\:/Users/Joelle/AndroidStudioProjects/MyApplication/app/src/main/res/layout/activity_sign_upactivity.xml" value="0.18143459915611815" />
         <entry key="..\:/Users/Joelle/AndroidStudioProjects/MyApplication/app/src/main/res/layout/activity_to_do_list.xml" value="0.14402173913043478" />
         <entry key="..\:/Users/Joelle/AndroidStudioProjects/MyApplication/app/src/main/res/layout/activity_video.xml" value="0.1598731884057971" />
         <entry key="..\:/Users/Joelle/AndroidStudioProjects/MyApplication/app/src/main/res/layout/activity_welcome.xml" value="0.1" />

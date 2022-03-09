@@ -1,23 +1,35 @@
 package com.example.myapplication;
 
+import android.graphics.Bitmap;
+import android.util.Base64;
+
+import java.io.ByteArrayOutputStream;
+
 public class User {
     protected String fullname;
     protected String email;
     protected String username;
     protected String image;
-    protected String gender;
+    protected String age;
     protected String key;
 
-    public User(String fullname, String email, String username, String image, String gender, String key) {
+    public User(String fullname, String email, String username, String image, String age, String key) {
         this.fullname = fullname;
         this.email = email;
         this.username = username;
-        this.image = image;
-        this.gender = gender;
+        this.age = age;
+        this.key = key;
+    }
+    public User(String fullname, String email, String username,  String age, String key) {
+        this.fullname = fullname;
+        this.email = email;
+        this.username = username;
+        this.age = age;
         this.key = key;
     }
 
-    public User() {
+
+    public User(String s, String email, String toString, String string) {
     }
 
     public String getFullname() {
@@ -52,12 +64,12 @@ public class User {
         this.image = image;
     }
 
-    public String getGender() {
-        return gender;
+    public String getAge() {
+        return age;
     }
 
-    public void setGender(String gender) {
-        this.gender = gender;
+    public void setAge(String gender) {
+        this.age = age;
     }
 
     public String getKey() {

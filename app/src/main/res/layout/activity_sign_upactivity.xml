@@ -76,45 +76,20 @@
          />
 
 
-    <TextView
-        android:id="@+id/textView"
+    <EditText
+        android:id="@+id/editTextAge"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Gender"
-        android:textSize="18dp"
-        android:gravity="center"
-        android:textColor="#00296b"
-        android:layout_marginTop="29dp"
-
+        android:ems="10"
+        android:hint="Age"
+        android:inputType="textEmailAddress"
+        android:layout_marginTop="27dp"
         />
 
 
-    <RadioGroup
-        android:id="@+id/radioGender"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
 
 
-        <RadioButton
-            android:id="@+id/radioMale"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:checked="true"
-            android:text="M"
-            android:textColor="@color/black" />
 
-        <RadioButton
-            android:id="@+id/radioFemale"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:checked="false"
-            android:text="F"
-            android:textColor="@color/black"
-            android:textSize="14dp" />
-
-    </RadioGroup>
 
     <Button
         android:id="@+id/buttonSignUP"
@@ -128,6 +103,5 @@
         app:strokeWidth="3dp"
         android:layout_marginTop="10dp"
         />
-
 
 </LinearLayout>
