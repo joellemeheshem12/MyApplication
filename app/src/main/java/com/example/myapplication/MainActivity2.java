@@ -48,7 +48,7 @@ public class MainActivity2 extends AppCompatActivity {
     }
 
     public void onClick1(View view) {
-        Intent intent= new Intent(this,ArrayListActivity.class) ;
+        Intent intent= new Intent(this,ProfileActivity.class) ;
         startActivity(intent);
     }
 

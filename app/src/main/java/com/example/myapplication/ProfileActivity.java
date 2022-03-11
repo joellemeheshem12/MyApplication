@@ -1,5 +1,6 @@
 package com.example.myapplication;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -10,48 +11,119 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.util.Base64;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
+import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.FileNotFoundException;
+import java.io.InputStream;
+import java.util.HashMap;
 
 public class ProfileActivity extends AppCompatActivity implements View.OnClickListener {
 
     private static final int CAMERA_REQUEST = 0;
     private static final int GALLERY_REQUEST = 1;
     //attributes
-    private Button buttonCamera , buttonGallery;
+    private Button buttonCamera , buttonGallery,button2;
     private ImageView imageViewProfile;
-
     //for picture of camera
     private Bitmap picture;
-    private User user;
+    private User user1;
     private String image;
+
+    private TextView fullname;
+    private TextView username;
+    private TextView email;
+    private TextView age;
+
+    private FirebaseDatabase database = FirebaseDatabase.getInstance("https://joelle-759cf-default-rtdb.europe-west1.firebasedatabase.app/");
+    private FirebaseAuth mAuth = FirebaseAuth.getInstance();
+    private FirebaseUser user = mAuth.getCurrentUser();
+
+    private DatabaseReference myRef = database.getReference("profiles/"+user.getUid());
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
+
         buttonCamera=findViewById(R.id.buttonCamera);
         buttonCamera.setOnClickListener(this);
-
         buttonGallery=findViewById(R.id.buttonGallery);
         buttonGallery.setOnClickListener(this);
-
         imageViewProfile=findViewById(R.id.imageViewProfile);
 
 
+        fullname=findViewById(R.id.fullname);
+        username=findViewById(R.id.username);
+        email=findViewById(R.id.email);
+        age=findViewById(R.id.age);
+
+        button2=findViewById(R.id.button2);
+        button2.setOnClickListener(this);
+
+
+        myRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                for(DataSnapshot dataSnapshot:snapshot.getChildren()){
+                    User u = dataSnapshot.getValue(User.class);
+                    Log.i("Profile111","user"+ u +"Id"+user.getUid()+"u"+u.getFullname()+u.getUsername()+u.getEmail()+u.getAge());
+                    updateUserData(new User(u.getFullname(),u.getUsername(),u.getEmail(),u.getAge()));
+
+                }
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+    }
+
+    private void updateUserData(User user){
+        fullname.setText(user.getFullname());
+        username.setText(user.getUsername());
+        email.setText(user.getEmail());
+        age.setText(user.getAge());
     }
 
     public void SaveImage(Bitmap bitmap){
-        ByteArrayOutputStream baos=new  ByteArrayOutputStream();
+        ByteArrayOutputStream baos = new  ByteArrayOutputStream();
         bitmap.compress(Bitmap.CompressFormat.PNG,100, baos);
         byte [] arr=baos.toByteArray();
         image= Base64.encodeToString(arr, Base64.DEFAULT);
+
+        Toast.makeText(ProfileActivity.this,"tygyhbbbjhtyvyvy",Toast.LENGTH_LONG);
+        HashMap<String, Object> values = new HashMap<>();
+        values.put("image", image);
+        myRef.updateChildren(values);
+    }
+
+    public Bitmap StringToBitMap(String image){
+        try{
+            byte [] encodeByte= Base64.decode(image,Base64.DEFAULT);
+
+            InputStream inputStream  = new ByteArrayInputStream(encodeByte);
+            Bitmap bitmap  = BitmapFactory.decodeStream(inputStream);
+            return bitmap;
+        }catch(Exception e){
+            e.getMessage();
+            return null;
+        }
     }
 
     @Override
@@ -59,10 +131,14 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
         if(view.getId() ==R.id.buttonCamera){
             Intent i =new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
             startActivityForResult(i, CAMERA_REQUEST);
-        }else{
+        }else if(view.getId()==R.id.buttonGallery){
             Intent i = new Intent(Intent.ACTION_PICK,MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
             startActivityForResult(i, GALLERY_REQUEST);
 
+        }
+        else{
+            Toast.makeText(ProfileActivity.this, "uybuhuyhiuh", Toast.LENGTH_SHORT).show();
+            SaveImage(picture);
         }
     }
     @Override
@@ -73,8 +149,9 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
                 picture = (Bitmap) data.getExtras().get("data");
                 //set image captured to be the new image
                 imageViewProfile.setImageBitmap(picture);
-                SaveImage(picture);
-                user.setImage(image);
+                Toast.makeText(ProfileActivity.this, "uybuhuyhiuh", Toast.LENGTH_SHORT).show();
+               // SaveImage(picture);
+
 
             }
         }else{

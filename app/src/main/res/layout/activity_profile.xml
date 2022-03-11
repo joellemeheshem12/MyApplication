@@ -48,6 +48,7 @@
    </TextView>
 
       <TextView
+          android:id="@+id/username"
           android:layout_marginTop="40dp"
           android:layout_width="match_parent"
           android:layout_height="40dp"
@@ -58,6 +59,7 @@
           >
       </TextView>
       <TextView
+          android:id="@+id/email"
           android:layout_marginTop="40dp"
           android:layout_width="match_parent"
           android:layout_height="40dp"
@@ -68,10 +70,11 @@
           >
       </TextView>
       <TextView
+          android:id="@+id/age"
           android:layout_marginTop="40dp"
           android:layout_width="match_parent"
           android:layout_height="40dp"
-          android:text="Gender"
+          android:text="Age"
           android:textSize="25dp"
           android:gravity="center"
           android:drawableLeft="@drawable/person"
@@ -79,4 +82,10 @@
       </TextView>
 
    </LinearLayout>
+
+   <Button
+       android:id="@+id/button2"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:text="Button" />
 </RelativeLayout>

@@ -27,15 +27,6 @@
             android:gravity="center"
             />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Logout"
-            android:textColor="@color/black"
-            android:layout_alignParentRight="true"
-            android:textStyle="normal"
-            android:textSize="15dp"/>
-
     </LinearLayout>
 
     <View

@@ -50,7 +50,7 @@ public class SignUPActivity extends AppCompatActivity  {
         editTextPassword = findViewById(R.id.editTextPassword);
         editTextUserName = findViewById(R.id.editTextUsername);
         editTextEmail = findViewById(R.id.editTextEmail);
-
+        editTextAge = findViewById(R.id.editTextAge);
         buttonSignUP = findViewById(R.id.buttonSignUP);
 
 

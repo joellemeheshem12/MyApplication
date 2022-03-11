@@ -13,23 +13,16 @@ public class User {
     protected String age;
     protected String key;
 
-    public User(String fullname, String email, String username, String image, String age, String key) {
+    public User(String fullname, String email, String username,  String age) {
         this.fullname = fullname;
         this.email = email;
         this.username = username;
         this.age = age;
-        this.key = key;
-    }
-    public User(String fullname, String email, String username,  String age, String key) {
-        this.fullname = fullname;
-        this.email = email;
-        this.username = username;
-        this.age = age;
-        this.key = key;
+
     }
 
 
-    public User(String s, String email, String toString, String string) {
+    public User() {
     }
 
     public String getFullname() {

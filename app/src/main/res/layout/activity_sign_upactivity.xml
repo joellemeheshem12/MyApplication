@@ -82,7 +82,6 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:hint="Age"
-        android:inputType="textEmailAddress"
         android:layout_marginTop="27dp"
         />
 
