@@ -1,9 +1,6 @@
 package com.example.myapplication;
 
 import android.graphics.Bitmap;
-import android.util.Base64;
-
-import java.io.ByteArrayOutputStream;
 
 public class User {
     protected String fullname;

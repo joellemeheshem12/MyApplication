@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".ProfileActivity">
+    tools:context=".ProfileActivity"
+    android:background="@drawable/blue">
 
    <include layout="@layout/toolbar"/>
 
@@ -24,15 +25,25 @@
           android:src="@drawable/lightblue"
           android:id="@+id/imageViewProfile"/>
        <Button
-           android:layout_width="match_parent"
+           android:layout_width="160dp"
            android:layout_height="wrap_content"
+           android:textColor="#BF0603"
+           android:layout_marginTop="10dp"
+           android:backgroundTint="@android:color/transparent"
+           app:strokeColor="#00296b"
+           app:strokeWidth="3dp"
            android:text="Take Picture"
            android:id="@+id/buttonCamera"/>
 
        <Button
-           android:layout_width="match_parent"
+           android:layout_width="160dp"
            android:layout_height="wrap_content"
-           android:text="Open Gallery"
+           android:text="open Gallery"
+           android:textColor="#BF0603"
+           android:layout_marginTop="10dp"
+           android:backgroundTint="@android:color/transparent"
+           app:strokeColor="#00296b"
+           app:strokeWidth="3dp"
            android:id="@+id/buttonGallery"/>
 
    <TextView
@@ -80,12 +91,5 @@
           android:drawableLeft="@drawable/person"
           >
       </TextView>
-
    </LinearLayout>
-
-   <Button
-       android:id="@+id/button2"
-       android:layout_width="wrap_content"
-       android:layout_height="wrap_content"
-       android:text="Button" />
 </RelativeLayout>

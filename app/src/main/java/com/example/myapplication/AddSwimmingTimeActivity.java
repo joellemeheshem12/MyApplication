@@ -59,20 +59,21 @@ public class AddSwimmingTimeActivity extends AppCompatActivity  implements Adapt
         editTextDate.setOnClickListener(new View.OnClickListener() {
 
             public void onClick(View view) {
-            int year =calendar.get(calendar.YEAR);
-                int month =calendar.get(calendar.MONTH);
-                int day =calendar.get(calendar.DAY_OF_MONTH);
-                DatePickerDialog datePickerDialog=new DatePickerDialog(AddSwimmingTimeActivity.this, new DatePickerDialog.OnDateSetListener()
-                        {
+                Calendar calendar = Calendar.getInstance();
+                int y = calendar.get(Calendar.YEAR);
+                int m = calendar.get(Calendar.MONTH);
+                int d = calendar.get(Calendar.DAY_OF_MONTH);
+                DatePickerDialog datePickerDialog = new DatePickerDialog(AddSwimmingTimeActivity.this, new DatePickerDialog.OnDateSetListener() {
                     @Override
-                    public void onDateSet(DatePicker datePicker, int year, int month, int day) {
-                 editTextDate.setText(SimpleDateFormat.getDateInstance().format(calendar.getTime()));
+                    public void onDateSet(DatePicker datePicker, int i, int i1, int i2) {
+                        i1 = i1 + 1;
+                        Toast.makeText(AddSwimmingTimeActivity.this, i2 + "/" + i1 + "/" + i, Toast.LENGTH_LONG).show();
+                        editTextDate.setText(i2 + "/" + i1 + "/" + i);
                     }
-                },year,month,day);
+                }, y, m, d);
                 datePickerDialog.show();
-                date = new Date(year, month, day);
             }
-        });
+            });
 
 
         pools = findViewById(R.id.pools);
