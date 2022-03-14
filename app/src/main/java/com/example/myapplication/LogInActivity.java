@@ -52,7 +52,7 @@ public class LogInActivity extends AppCompatActivity implements  DialogInterface
     }
 
     public void login(View view) {
-        Intent intent = new Intent(this, MainActivity.class);
+        Intent intent = new Intent(this, MainActivity2.class);
         if (!editTextEmail.getText().toString().equals("") && editTextEmail.getText().toString().contains("@") && editTextEmail.getText().toString().contains(".")) {
             //saving email and  password of user in a local file for future use
             //create sp file

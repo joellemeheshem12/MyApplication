@@ -32,9 +32,9 @@ public class MainActivity2 extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()) {
-            case R.id.camera_menu:
-                Toast.makeText(this, "Camera", Toast.LENGTH_LONG).show();
-                Intent intent= new Intent(this,CameraActivity.class) ;
+            case R.id.profile_menu:
+                Toast.makeText(this, "Profile", Toast.LENGTH_LONG).show();
+                Intent intent= new Intent(this,ProfileActivity.class) ;
                 startActivity(intent);
                 break;
             case R.id.exit_menu:
@@ -48,7 +48,7 @@ public class MainActivity2 extends AppCompatActivity {
     }
 
     public void onClick1(View view) {
-        Intent intent= new Intent(this,ProfileActivity.class) ;
+        Intent intent= new Intent(this,ArrayListActivity.class) ;
         startActivity(intent);
     }
 

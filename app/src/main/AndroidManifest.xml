@@ -53,9 +53,6 @@
             android:name=".LogInActivity"
             android:exported="true" />
         <activity
-            android:name=".MainActivity"
-            android:exported="true" />
-        <activity
             android:name=".SignUPActivity"
             android:exported="true" />
         <activity

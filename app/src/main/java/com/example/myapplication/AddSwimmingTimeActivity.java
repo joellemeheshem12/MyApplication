@@ -28,9 +28,10 @@ import java.util.Calendar;
 import java.util.Date;
 
 public class AddSwimmingTimeActivity extends AppCompatActivity  implements AdapterView.OnItemSelectedListener {
+
     private AutoCompleteTextView pools,dis,stroke1;
     private Button add1;
-    private SwimmingTime st ;
+    private SwimmingTime st;
     private Date date;
     private Time time;
     private String pool;
@@ -38,11 +39,11 @@ public class AddSwimmingTimeActivity extends AppCompatActivity  implements Adapt
     private String stoke;
     private FirebaseDatabase database = FirebaseDatabase.getInstance("https://joelle-759cf-default-rtdb.europe-west1.firebasedatabase.app/");
     private DatabaseReference myRef;
-    private EditText editTextDate;
     private String[] poolType = {"Long Course M", "Short Course Mts", "Short Course Yds"};
     private String[] distance1 = {"50","100","200","400"};
     private String[] strokeType = {"Fly", "Backstroke", "Breaststroke","Freestyle","I.M"};
     private EditText editTextTime;
+    private EditText editTextDate;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
