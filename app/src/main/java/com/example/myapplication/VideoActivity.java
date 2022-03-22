@@ -3,6 +3,7 @@ package com.example.myapplication;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.widget.MediaController;
 import android.widget.VideoView;
@@ -10,6 +11,8 @@ import android.widget.VideoView;
 import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.YouTubePlayer;
 import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.listeners.AbstractYouTubePlayerListener;
 import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView;
+
+import java.util.Objects;
 
 public class VideoActivity extends AppCompatActivity {
 
@@ -26,6 +29,7 @@ public class VideoActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_video);
+        Objects.requireNonNull(getSupportActionBar()).setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.colorPrimary)));
         YouTubePlayerView fly = findViewById(R.id.flyVideo1);
         YouTubePlayerView back1 = findViewById(R.id.backVideo1);
         YouTubePlayerView back2 = findViewById(R.id.backVideo2);

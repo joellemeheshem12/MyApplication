@@ -94,7 +94,7 @@
         android:id="@+id/buttonSignUP"
         android:layout_width="160dp"
         android:layout_height="wrap_content"
-        android:textColor="#f4a261"
+        android:textColor="#BF0603"
         android:onClick="Submit"
         android:text="Sign up"
         android:backgroundTint="@android:color/transparent"

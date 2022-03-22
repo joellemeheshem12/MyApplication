@@ -35,6 +35,8 @@ import java.util.HashMap;
 
 public class ProfileActivity extends AppCompatActivity implements View.OnClickListener {
 
+    private Button logoutbutton;
+
     private static final int CAMERA_REQUEST = 0;
     private static final int GALLERY_REQUEST = 1;
     //attributes
@@ -60,6 +62,15 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
+
+        logoutbutton = findViewById(R.id.logoutbutton);
+        logoutbutton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                FirebaseAuth.getInstance().signOut();
+                startActivity(new Intent(ProfileActivity.this,FirstActivity.class));
+            }
+        });
 
         buttonCamera = findViewById(R.id.buttonCamera);
         buttonCamera.setOnClickListener(this);

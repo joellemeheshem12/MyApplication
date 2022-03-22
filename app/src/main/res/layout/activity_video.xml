@@ -20,7 +20,7 @@
         android:layout_height="wrap_content"
         android:text="Fly Technique"
         android:textSize="20dp"
-        android:textColor="@color/black"
+        android:textColor="#00296b"
         android:textStyle="bold"
        > </TextView>
 
@@ -38,7 +38,7 @@
         android:layout_height="wrap_content"
         android:text="BackStroke Technique"
         android:textSize="20dp"
-        android:textColor="@color/black"
+        android:textColor="#00296b"
         android:textStyle="bold"
         > </TextView>
 
@@ -54,7 +54,7 @@
             android:id="@+id/backVideo2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="20dp"
             app:autoPlay="true"
             app:videoId="MrFt6JHii8w" />
 
@@ -63,7 +63,7 @@
             android:layout_height="wrap_content"
             android:text="BreastStroke Technique"
             android:textSize="20dp"
-            android:textColor="@color/black"
+            android:textColor="#00296b"
             android:textStyle="bold"
             > </TextView>
 
@@ -80,7 +80,7 @@
             android:layout_height="wrap_content"
             android:text="FreeStyle Technique "
             android:textSize="20dp"
-            android:textColor="@color/black"
+            android:textColor="#00296b"
             android:textStyle="bold"
             > </TextView>
 
@@ -97,7 +97,7 @@
             android:layout_height="wrap_content"
             android:text="How To Do Turns "
             android:textSize="20dp"
-            android:textColor="@color/black"
+            android:textColor="#00296b"
             android:textStyle="bold"
             > </TextView>
 
@@ -115,7 +115,7 @@
             android:layout_height="wrap_content"
             app:videoId="rPrSVDBdaDM"
             app:autoPlay="true"
-            android:layout_marginTop="10dp"/>
+            android:layout_marginTop="20dp"/>
 
 
     </LinearLayout>

@@ -20,6 +20,31 @@
 
         />
 
+    <EditText
+        android:id="@+id/date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:backgroundTint="@android:color/transparent"
+        app:strokeColor="#00296b"
+        app:strokeWidth="3dp"
+        android:layout_gravity="center"
+        android:text="select date "
+        android:textColor="#BF0603"
+        />
+
+    <EditText
+        android:id="@+id/time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:backgroundTint="@android:color/transparent"
+        app:strokeColor="#00296b"
+        app:strokeWidth="3dp"
+        android:layout_gravity="center"
+        android:text=" time"
+        android:textColor="#BF0603"
+        />
 
     <EditText
         android:id="@+id/date_time"
@@ -31,7 +56,7 @@
         app:strokeWidth="3dp"
         android:layout_gravity="center"
         android:text="select date and time"
-        android:textColor="#f4a261"
+        android:textColor="#BF0603"
         />
 
 
@@ -45,7 +70,7 @@
         app:strokeWidth="3dp"
         android:layout_gravity="center"
         android:text="Add"
-        android:textColor="#f4a261"
+        android:textColor="#BF0603"
 
         />
 
