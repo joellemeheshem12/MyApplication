@@ -3,6 +3,8 @@ package com.example.myapplication;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -96,10 +98,36 @@ public class ArrayListActivity extends AppCompatActivity implements View.OnClick
 
           }
       });
+
+            myListView.setOnLongClickListener(new AdapterView.OnItemLongClickListener() {
+                public boolean onLongClick(AdapterView<?> parent, View view, int position, long id) {
+                    final int which_item = position;
+                    new AlertDialog.Builder(ArrayListActivity.this)
+                            .setIcon(android.R.drawable.ic_delete)
+                            .setTitle("Are you sure?")
+                            .setMessage("Do you want to delete this item")
+                            .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialogInterface, int i) {
+                                    list.remove(which_item);
+                                    myAdapter.notifyDataSetChanged();
+                                }
+                            })
+                            .setNegativeButton("No", null)
+                            .show();
+                    return true;
+                }
+            });
+
+
     }
 
     public void onClick(View view) {
         Intent intent= new Intent(this,AddTrainingActivity.class) ;
         startActivity(intent);
     }
+
+
+
+
 }

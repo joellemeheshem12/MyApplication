@@ -7,8 +7,13 @@
     android:orientation="vertical"
     android:background="@drawable/blue"
     tools:context=".ArrayListActivity">
-
-
+     <TextView
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:text="Trains"
+         android:textStyle="bold"
+         android:textSize="30dp"
+         android:textColor="#00296b"/>
 
         <ListView
             android:id="@+id/myListView"
@@ -29,6 +34,8 @@
             android:id="@+id/createnotefab"
             android:src="@drawable/ic_add"
             app:maxImageSize="40dp"
+            app:backgroundTint="#123456"
+            app:tint="@color/white"
             >
         </com.google.android.material.floatingactionbutton.FloatingActionButton>
     </LinearLayout>

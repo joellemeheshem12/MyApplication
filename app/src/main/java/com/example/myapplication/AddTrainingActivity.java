@@ -31,14 +31,12 @@ import java.util.TimeZone;
 public class AddTrainingActivity extends AppCompatActivity {
 
     private Button add;
-    private EditText date_time,date1,time1;
+    private EditText date_time;
     private Train t = new Train();
     private Date date;
     private Time time;
     private FirebaseDatabase database = FirebaseDatabase.getInstance("https://joelle-759cf-default-rtdb.europe-west1.firebasedatabase.app/");
     DatabaseReference myRef;
-
-    int hour, minute;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,32 +45,6 @@ public class AddTrainingActivity extends AppCompatActivity {
         String user = FirebaseAuth.getInstance().getUid();
         myRef = database.getReference("users/" + user+"/Trainning");
         add = findViewById(R.id.add);
-
-        date1=findViewById(R.id.date);
-        time1=findViewById(R.id.time);
-
-        time1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Calendar calendar1=Calendar.getInstance();
-                int hours=calendar1.get(Calendar.HOUR_OF_DAY);
-                int mins=calendar1.get(Calendar.MINUTE);
-                TimePickerDialog timePickerDialog=new TimePickerDialog(AddTrainingActivity.this, R.style.Theme_AppCompat_Dialog, new TimePickerDialog.OnTimeSetListener() {
-                    @Override
-                    public void onTimeSet(TimePicker timePicker, int hourOfDay, int minute) {
-                        Calendar c=Calendar.getInstance();
-                        c.set(Calendar.HOUR_OF_DAY,hourOfDay);
-                        c.set(Calendar.MINUTE,minute);
-                        c.setTimeZone(TimeZone.getDefault());
-                        SimpleDateFormat format=new SimpleDateFormat("k:mm a");
-                        String time3=format.format(c.getTime());
-                        time1.setText(time3);
-                        time=new Time(hourOfDay, minute, 0);
-                    }
-                },hours,mins,false);
-                timePickerDialog.show();
-            }
-        });
 
         date_time = findViewById(R.id.date_time);
         date_time.setInputType(InputType.TYPE_NULL);
@@ -115,7 +87,7 @@ public class AddTrainingActivity extends AppCompatActivity {
                         calendar.set(Calendar.HOUR_OF_DAY, hourOfDay);
                         calendar.set(Calendar.MINUTE, minute);
 
-                        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd.MM.yy HH:mm");
+                        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd.MM.yy ");
 
                         date_time_in.setText(simpleDateFormat.format(calendar.getTime()));
                         time = new Time(hourOfDay, minute, 0);
