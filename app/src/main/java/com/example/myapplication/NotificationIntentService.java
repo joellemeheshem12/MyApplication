@@ -31,12 +31,12 @@ public class NotificationIntentService extends IntentService {
     protected void onHandleIntent(Intent intent) {
         Notification.Builder noBuilder = new Notification.Builder(this );
         //todo need to change the notification title
-        noBuilder.setContentTitle("this is the notification title");
-        noBuilder.setContentText("this is the notification body text");
-        noBuilder.setSmallIcon(R.drawable.ic_baseline_wb_cloudy_24);
+        noBuilder.setContentTitle("Hello!");
+        noBuilder.setContentText("inter in your next train ");
+        noBuilder.setSmallIcon(R.drawable.ic_notifications);
         //this intent will be pending until the user clicks on the notification
         //and will activate the activity specified in the intent
-        Intent noIntent1 = new Intent(this, FirstActivity.class);
+        Intent noIntent1 = new Intent(this, ArrayListActivity.class);
         PendingIntent pendingIntent = PendingIntent.getActivity(this,2,noIntent1,PendingIntent.FLAG_UPDATE_CURRENT);
         noBuilder.setContentIntent(pendingIntent);
 

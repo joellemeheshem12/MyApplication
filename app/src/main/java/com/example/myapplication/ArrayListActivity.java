@@ -9,6 +9,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemLongClickListener;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListView;
@@ -74,7 +75,7 @@ public class ArrayListActivity extends AppCompatActivity implements View.OnClick
 
            }
        });
-      myListView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+      myListView.setOnItemLongClickListener(new OnItemLongClickListener() {
           @Override
           public boolean onItemLongClick(AdapterView<?> adapterView, View view, int i, long l) {
               list.remove(i);
@@ -99,25 +100,7 @@ public class ArrayListActivity extends AppCompatActivity implements View.OnClick
           }
       });
 
-            myListView.setOnLongClickListener(new AdapterView.OnItemLongClickListener() {
-                public boolean onLongClick(AdapterView<?> parent, View view, int position, long id) {
-                    final int which_item = position;
-                    new AlertDialog.Builder(ArrayListActivity.this)
-                            .setIcon(android.R.drawable.ic_delete)
-                            .setTitle("Are you sure?")
-                            .setMessage("Do you want to delete this item")
-                            .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
-                                @Override
-                                public void onClick(DialogInterface dialogInterface, int i) {
-                                    list.remove(which_item);
-                                    myAdapter.notifyDataSetChanged();
-                                }
-                            })
-                            .setNegativeButton("No", null)
-                            .show();
-                    return true;
-                }
-            });
+
 
 
     }
