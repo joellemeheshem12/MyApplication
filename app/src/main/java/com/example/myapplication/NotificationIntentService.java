@@ -30,7 +30,7 @@ public class NotificationIntentService extends IntentService {
     @Override
     protected void onHandleIntent(Intent intent) {
         Notification.Builder noBuilder = new Notification.Builder(this );
-        //todo need to change the notification title
+
         noBuilder.setContentTitle("Hello!");
         noBuilder.setContentText("inter in your next train ");
         noBuilder.setSmallIcon(R.drawable.ic_notifications);

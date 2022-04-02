@@ -44,12 +44,6 @@
             android:exported="true" />
 
         <activity
-            android:name=".WelcomeActivity"
-            android:exported="true" />
-        <activity
-            android:name=".CameraActivity"
-            android:exported="true" />
-        <activity
             android:name=".LogInActivity"
             android:exported="true" />
         <activity

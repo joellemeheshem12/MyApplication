@@ -32,7 +32,7 @@
             android:layout_marginTop="35dp"
             android:layout_marginLeft="20dp"
             android:text="inter your next training"
-            android:textColor="@color/black">
+            android:textColor="#00296b">
 
         </TextView>
         <ImageView
@@ -88,6 +88,16 @@
             android:textColor="#8D0801"
             android:textSize="18dp">
         </TextView>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="35dp"
+            android:layout_marginLeft="20dp"
+            android:text="watch these videos and improve your technique"
+            android:textColor="#00296b"
+            >
+        </TextView>
+
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

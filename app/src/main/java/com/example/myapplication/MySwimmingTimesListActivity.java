@@ -31,7 +31,7 @@ public class MySwimmingTimesListActivity extends AppCompatActivity {
     //get instance of authentication project In FB console
     private FirebaseAuth maFirebaseAuth = FirebaseAuth.getInstance();
     //gets the root of the real time database in the FB console
-    private FirebaseDatabase database = FirebaseDatabase.getInstance("tps://joelle-ht759cf-default-rtdb.europe-west1.firebasedatabase.app/");
+    private FirebaseDatabase database = FirebaseDatabase.getInstance("https://joelle-759cf-default-rtdb.europe-west1.firebasedatabase.app/");
 
     private Button add;
     @Override

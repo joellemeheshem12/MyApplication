@@ -35,8 +35,8 @@
           android:text="FullName"
           android:textSize="25dp"
           android:gravity="center"
-          >  </TextView>
 
+         />
 
       <Button
           android:id="@+id/buttonCamera"
@@ -90,20 +90,18 @@
           android:text="Age"
           android:textSize="25dp"
           android:gravity="center"
-          android:drawableLeft="@drawable/person"
           >
       </TextView>
       
       <Button
           android:id="@+id/logoutbutton"
-          android:layout_width="160dp"
+          android:layout_width="130dp"
           android:layout_height="wrap_content"
           android:text="Logout"
           android:layout_marginTop="30dp"
           android:textColor="#BF0603"
           android:backgroundTint="@android:color/transparent"
-          app:strokeColor="#00296b"
-          app:strokeWidth="3dp"
+          android:drawableLeft="@drawable/ic_exit"
          />
 
 

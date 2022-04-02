@@ -70,6 +70,7 @@ public class AddSwimmingTimeActivity extends AppCompatActivity  implements Adapt
                         i1 = i1 + 1;
                         Toast.makeText(AddSwimmingTimeActivity.this, i2 + "/" + i1 + "/" + i, Toast.LENGTH_LONG).show();
                         editTextDate.setText(i2 + "/" + i1 + "/" + i);
+                        date = new Date(i2, i1,i);
                     }
                 }, y, m, d);
                 datePickerDialog.show();

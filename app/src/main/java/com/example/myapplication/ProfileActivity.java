@@ -171,6 +171,7 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
                     //Decode an input stream into a bitmap.
                     picture = BitmapFactory.decodeStream(getContentResolver().openInputStream(targetUri));
                     imageViewProfile.setImageBitmap(picture);
+                    SaveImage(picture);
                 } catch (FileNotFoundException e) {
                     e.printStackTrace();
                 }
