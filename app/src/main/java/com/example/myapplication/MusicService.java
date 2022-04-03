@@ -23,7 +23,7 @@ public class MusicService extends Service {
         super.onCreate();
         //load to the music file
         mediaPlayer = MediaPlayer.create(this,R.raw.backgroundmusic);
-        mediaPlayer.setLooping(true);//set the music file to loop
+        mediaPlayer.setLooping(false);//set the music file to loop
         mediaPlayer.setVolume(100,100);
     }
 

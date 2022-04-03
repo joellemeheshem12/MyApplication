@@ -40,7 +40,7 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
     private static final int CAMERA_REQUEST = 0;
     private static final int GALLERY_REQUEST = 1;
     //attributes
-    private Button buttonCamera, buttonGallery, button2;
+    private Button buttonCamera, buttonGallery;
     private ImageView imageViewProfile;
     //for picture of camera
     private Bitmap picture;

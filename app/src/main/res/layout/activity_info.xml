@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="@drawable/lightblue"
+    tools:context=".InfoActivity">
+
+    <androidx.cardview.widget.CardView
+        android:onClick="expand1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="10dp"
+        app:contentPadding="20dp">
+        <LinearLayout
+            android:id="@+id/layout1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:animateLayoutChanges="true">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Swimming"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                android:textColor="#00296b"/>
+            <TextView
+                android:id="@+id/details1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="swimming, in recreation and sports, the propulsion of the body through water by combined arm and leg motions and the natural flotation of the body. Swimming as an exercise is popular as an all-around body developer and is particularly useful in therapy and as exercise for physically handicapped persons. It is also taught for lifesaving purposes. For activities that involve swimming, see also diving, lifesaving, surfing, synchronized swimming, underwater diving, and water polo."
+                android:textSize="18sp"
+                android:visibility="gone"
+                android:textColor="@color/black"/>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:onClick="expand2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="10dp"
+        app:contentPadding="20dp">
+        <LinearLayout
+            android:id="@+id/layout2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:animateLayoutChanges="true">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Instruction and training"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                android:textColor="#00296b"/>
+            <TextView
+                android:id="@+id/details2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="The earliest instruction programs were in Great Britain in the 19th century, both for sport and for lifesaving. Those programs were copied in the rest of Europe. In the United States swimming instruction for lifesaving purposes began under the auspices of the American Red Cross in 1916. Instructional work done by the various branches of the armed forces during both World Wars I and II was very effective in promoting swimming.
+                  Courses taught by community organizations and schools, extending ultimately to very young infants, became common."
+                android:textSize="18sp"
+                android:visibility="gone"
+                android:textColor="@color/black"/>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:onClick="expand3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="10dp"
+        app:contentPadding="20dp">
+        <LinearLayout
+            android:id="@+id/layout3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:animateLayoutChanges="true">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Strokes"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                android:textColor="#00296b"/>
+            <TextView
+                android:id="@+id/details3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="The earliest strokes to be used were the sidestroke and the breaststroke. The sidestroke was originally used with both arms submerged. That practice was modified toward the end of the 19th century by bringing forward first one arm above the water, then the other, and then each in turn. The sidestroke was supplanted in competitive swimming by the crawl (see below) but is still used in lifesaving and recreational swimming. The body stays on its side and the arms propel alternately. The leg motion used in sidestroke is called the scissors kick, in which the legs open slowly, under leg backward, upper leg forward, both knees slightly bent, and toes pointed. The scissoring action of the legs coming smartly together after opening creates the forward propulsion of the kick."
+                android:textSize="18sp"
+                android:visibility="gone"
+                android:textColor="@color/black"/>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+</LinearLayout>

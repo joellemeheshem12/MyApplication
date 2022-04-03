@@ -14,6 +14,9 @@
         android:theme="@style/Theme.MaterialComponents.DayNight"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".InfoActivity"
+            android:exported="true" />
+        <activity
             android:name=".konfettiActivity"
             android:exported="true" />
         <activity
@@ -23,16 +26,10 @@
             android:name=".MainActivity2"
             android:exported="true" />
         <activity
-            android:name=".MySwimmingTimesListActivity"
-            android:exported="true" />
-        <activity
             android:name=".AddTrainingActivity"
             android:exported="true" />
         <activity
             android:name=".ProfileActivity"
-            android:exported="true" />
-        <activity
-            android:name=".AddSwimmingTimeActivity"
             android:exported="true" />
 
         <service

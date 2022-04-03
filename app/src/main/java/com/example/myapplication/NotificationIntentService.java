@@ -31,7 +31,7 @@ public class NotificationIntentService extends IntentService {
     protected void onHandleIntent(Intent intent) {
         Notification.Builder noBuilder = new Notification.Builder(this );
 
-        noBuilder.setContentTitle("Hello!");
+        noBuilder.setContentTitle("Long time no see!");
         noBuilder.setContentText("inter in your next train ");
         noBuilder.setSmallIcon(R.drawable.ic_notifications);
         //this intent will be pending until the user clicks on the notification

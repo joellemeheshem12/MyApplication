@@ -41,9 +41,7 @@ public class ArrayListActivity extends AppCompatActivity implements View.OnClick
    //gets the root of the real time database in the FB console
    private FirebaseDatabase database = FirebaseDatabase.getInstance("https://joelle-759cf-default-rtdb.europe-west1.firebasedatabase.app/");
 
-   private Button add;
 
-   ImageView imageViewAdd;
 
 
     @Override
@@ -51,10 +49,6 @@ public class ArrayListActivity extends AppCompatActivity implements View.OnClick
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_array_list);
 
-
-        imageViewAdd = findViewById(R.id.createnotefab);
-        imageViewAdd.setOnClickListener(this);
-        //addButton = findViewById(R.id.addButton);
         String UID =maFirebaseAuth.getUid();
         //build a ref for for user related data in real time database using user ID
         DatabaseReference myRef = database.getReference("users/"+UID+"/Trainning");
@@ -75,14 +69,14 @@ public class ArrayListActivity extends AppCompatActivity implements View.OnClick
 
            }
        });
-      myListView.setOnItemLongClickListener(new OnItemLongClickListener() {
-          @Override
-          public boolean onItemLongClick(AdapterView<?> adapterView, View view, int i, long l) {
-              list.remove(i);
-              myAdapter.notifyDataSetChanged();
-              return false;
-          }
-      });
+        myListView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+            @Override
+            public boolean onItemLongClick(AdapterView<?> adapterView, View view, int i, long l) {
+                list.remove(i);
+                myAdapter.notifyDataSetChanged();
+                return false;
+            }
+        });
 
       myRef.addValueEventListener(new ValueEventListener() {
           @Override

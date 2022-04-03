@@ -53,7 +53,7 @@ public class MainActivity2 extends AppCompatActivity {
     }
 
     public void onClick2(View view) {
-        Intent intent= new Intent(this,MySwimmingTimesListActivity.class) ;
+        Intent intent= new Intent(this,InfoActivity.class) ;
         startActivity(intent);
     }
 
