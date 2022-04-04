@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
@@ -32,10 +33,12 @@ import java.io.ByteArrayOutputStream;
 import java.io.FileNotFoundException;
 import java.io.InputStream;
 import java.util.HashMap;
+import java.util.Objects;
 
 public class ProfileActivity extends AppCompatActivity implements View.OnClickListener {
 
-    private Button logoutbutton;
+
+
 
     private static final int CAMERA_REQUEST = 0;
     private static final int GALLERY_REQUEST = 1;
@@ -63,14 +66,8 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
 
-        logoutbutton = findViewById(R.id.logoutbutton);
-        logoutbutton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                FirebaseAuth.getInstance().signOut();
-                startActivity(new Intent(ProfileActivity.this,FirstActivity.class));
-            }
-        });
+        Objects.requireNonNull(getSupportActionBar()).setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.actionbar)));
+
 
         buttonCamera = findViewById(R.id.buttonCamera);
         buttonCamera.setOnClickListener(this);
@@ -179,4 +176,16 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
 
         }
     }
+    public void logOut(View view){
+        mAuth.signOut();
+        this.finish();
+        Intent intent= new Intent(ProfileActivity.this, FirstActivity.class);
+        startActivity(intent);
+    }
+
+    public void back(View view){
+        Intent intent= new Intent(ProfileActivity.this, MainActivity2.class);
+        startActivity(intent);
+    }
+
 }

@@ -3,12 +3,15 @@ package com.example.myapplication;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.animation.LayoutTransition;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.transition.AutoTransition;
 import android.transition.TransitionManager;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+
+import java.util.Objects;
 
 public class InfoActivity extends AppCompatActivity {
 
@@ -19,6 +22,7 @@ public class InfoActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_info);
 
+        Objects.requireNonNull(getSupportActionBar()).setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.actionbar)));
         detailsText1 = findViewById(R.id.details1);
         layout1 = findViewById(R.id.layout1);
         layout1.getLayoutTransition().enableTransitionType(LayoutTransition.CHANGING);

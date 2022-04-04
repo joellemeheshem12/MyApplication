@@ -93,17 +93,6 @@
           >
       </TextView>
       
-      <Button
-          android:id="@+id/logoutbutton"
-          android:layout_width="130dp"
-          android:layout_height="wrap_content"
-          android:text="Logout"
-          android:layout_marginTop="30dp"
-          android:textColor="#BF0603"
-          android:backgroundTint="@android:color/transparent"
-          android:drawableLeft="@drawable/ic_exit"
-         />
-
 
    </LinearLayout>
 

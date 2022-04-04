@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -15,6 +16,7 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -26,6 +28,7 @@ import java.sql.Time;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.Objects;
 
 public class ArrayListActivity extends AppCompatActivity implements View.OnClickListener
 {
@@ -40,7 +43,7 @@ public class ArrayListActivity extends AppCompatActivity implements View.OnClick
    private FirebaseAuth maFirebaseAuth = FirebaseAuth.getInstance();
    //gets the root of the real time database in the FB console
    private FirebaseDatabase database = FirebaseDatabase.getInstance("https://joelle-759cf-default-rtdb.europe-west1.firebasedatabase.app/");
-
+   private FloatingActionButton createnotefab;
 
 
 
@@ -48,12 +51,15 @@ public class ArrayListActivity extends AppCompatActivity implements View.OnClick
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_array_list);
+        Objects.requireNonNull(getSupportActionBar()).setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.actionbar)));
 
         String UID =maFirebaseAuth.getUid();
         //build a ref for for user related data in real time database using user ID
         DatabaseReference myRef = database.getReference("users/"+UID+"/Trainning");
        //adds an item to the firebase under the referenced specified
         list = new ArrayList<>();
+
+        createnotefab=findViewById(R.id.createnotefab);
 
 
         //reference to the list view so it can be programed

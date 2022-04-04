@@ -36,6 +36,7 @@
             app:maxImageSize="40dp"
             app:backgroundTint="#123456"
             app:tint="@color/white"
+            android:onClick="onClick"
             >
         </com.google.android.material.floatingactionbutton.FloatingActionButton>
     </LinearLayout>
